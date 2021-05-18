@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<title>看妹儿</title>
+		<link rel="stylesheet" href="css/baguetteBox.css">
+		<link rel="stylesheet" href="css/style.css">
+		<link rel="shortcut icon" href="./img/girl.png" type="image/x-icon">
+		<script src="js/jquery-1.11.0.min.js"></script>
+		<script src="js/baguetteBox.js"></script>
+	</head>
+	<body>
+
+		<!-- 瀑布流 -->
+		<section class="gallery">
+			
+		</section>
+
+		<div id="goTopBtn"><span class="icon_top"></span></div>
+		<script>
+		
+			var url1;
+			var url2;
+			var random1;
+			var random2;
+			for (var i = 0; i < 50; i++) {
+							random1 = parseInt(Math.random() * 10486 + 1);
+							random2 = parseInt(Math.random() * 4803 + 1);
+							url1 = "https://cdn.jsdelivr.net/gh/1042004021/Imgs/Pictures/" + random1 +
+								".jpg";
+							url2 = "https://cdn.jsdelivr.net/gh/1042004021/Imgs/width/" +
+								random2 + ".jpg"
+							var img1 = "<div><a href=" + url1 + " data-caption='标题'><img src=" + url1 +
+								" alt='First image'></a></div>";
+							var img2 = "<div><a href=" + url2 + " data-caption=''标题'><img src=" + url2 +
+								" alt='First image'></a></div>";
+							var random3 = parseInt(Math.random() * 2);
+							if (random3 == 0) {
+								$(".gallery").append(img1);
+							} else {
+								$(".gallery").append(img2);
+							}
+						}
+			$(function() {
+baguetteBox.run('.gallery', {
+						// 配置参数
+						buttons: Boolean, //是否显示导航按钮。
+						noScrollbars: true, //是否在显示时隐藏滚动条。
+						titleTag: true, //是否使用图片上的title属性作为图片标题
+						async: false, //是否异步加载文件。
+
+						afterShow: function() { //显示遮罩层之后的回调函数。   
+							$(".pressing").fadeIn();
+							console.log(123)
+
+						},
+						afterHide: function() { //隐藏遮罩层之后的回调函数。 
+							$(".pressing").fadeOut();
+
+						},
+						preload: 5, //预加载多少个文件。
+						onChange: function(currentIndex, imagesCount) {}, //图片改变时的回调函数 
+						overlayBackgroundColor: 'rgba(0,0,0,0.8)' //遮罩层的背景颜色
+					});
+				var $down = $('.down');
+				var $window = $(window);
+				var $document = $(document);
+				//返回顶部 
+				$(window).scroll(function() {
+
+					if ($(document).scrollTop() >= $(document).height() - $(window).height()) {
+						for (var i = 0; i < 20; i++) {
+							random1 = parseInt(Math.random() * 10486 + 1);
+							random2 = parseInt(Math.random() * 4803 + 1);
+							url1 = "https://cdn.jsdelivr.net/gh/1042004021/Imgs/Pictures/" + random1 +
+								".jpg";
+							url2 = "https://cdn.jsdelivr.net/gh/1042004021/Imgs/width/" +
+								random2 + ".jpg"
+							var img1 = "<div><a href=" + url1 + " data-caption='标题'><img src=" + url1 +
+								" alt='First image'></a></div>";
+							var img2 = "<div><a href=" + url2 + " data-caption=''标题'><img src=" + url2 +
+								" alt='First image'></a></div>";
+							var random3 = parseInt(Math.random() * 2);
+							if (random3 == 0) {
+								$(".gallery").append(img1);
+							} else {
+								$(".gallery").append(img2);
+							}
+						}
+					}
+					baguetteBox.run('.gallery', {
+						// 配置参数
+						buttons: Boolean, //是否显示导航按钮。
+						noScrollbars: true, //是否在显示时隐藏滚动条。
+						titleTag: true, //是否使用图片上的title属性作为图片标题
+						async: false, //是否异步加载文件。
+
+						afterShow: function() { //显示遮罩层之后的回调函数。   
+							$(".pressing").fadeIn();
+							console.log(123)
+
+						},
+						afterHide: function() { //隐藏遮罩层之后的回调函数。 
+							$(".pressing").fadeOut();
+
+						},
+						preload: 5, //预加载多少个文件。
+						onChange: function(currentIndex, imagesCount) {}, //图片改变时的回调函数 
+						overlayBackgroundColor: 'rgba(0,0,0,0.8)' //遮罩层的背景颜色
+					});
+				
+					// }
+					var sc = $(window).scrollTop();
+					var rwidth = $(window).width()
+					if (sc > 500) {
+						$("#goTopBtn").css("display", "block");
+						$("#goTopBtn").css("left", (rwidth - 106) + "px")
+					} else {
+						$("#goTopBtn").css("display", "none");
+					}
+				})
+				$("#goTopBtn").click(function() {
+					var sc = $(window).scrollTop();
+					$('body,html').animate({
+						scrollTop: 0
+					}, 100);
+				})
+
+				$(".allnews").click(function() {
+					$("#allcon").css("height", "auto");
+					$(this).hide(1000);
+				});
+			})
+		</script>
+	</body>
+</html>
