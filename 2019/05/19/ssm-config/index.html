@@ -10,8 +10,10 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="google" content="notranslate" />
     <meta name="keywords" content="Fechin,"> 
-    <meta name="description" content="spring
-"> 
+    <meta name="description" content="一、web.xml
+
+1.配置SpringMVC编码过滤器
+123456789101112&amp;lt;filter&amp;gt;	&amp;lt;filter-name&amp;gt;CharacterEncodingFil,"> 
     <meta name="author" content="elder"> 
     <link rel="alternative" href="atom.xml" title="一个默默无闻的博客" type="application/atom+xml"> 
     <link rel="icon" href="/img/favicon.png"> 
@@ -50,12 +52,62 @@
         <div class="stuff">
             <span>五月 19, 2019</span>
             
-  <ul class="post-tags-list" itemprop="keywords"><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/%E6%8A%80%E6%9C%AF/" rel="tag">技术</a></li></ul>
+  <ul class="post-tags-list" itemprop="keywords"><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/%E6%8A%80%E6%9C%AF-ssm/" rel="tag">技术,ssm</a></li></ul>
 
 
         </div>
         <div class="content markdown">
-            <p>spring</p>
+            <center><font color="red"><b>一、web.xml</b></font></center>
+
+<p><font color="red">1.配置SpringMVC编码过滤器</font></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;filter&gt;</span><br><span class="line">	&lt;filter-name&gt;CharacterEncodingFilter&lt;/filter-name&gt;</span><br><span class="line">	&lt;filter-class&gt;org.springframework.web.filter.CharacterEncodingFilter&lt;/filter-class&gt;</span><br><span class="line">	&lt;init-param&gt;</span><br><span class="line">		&lt;param-name&gt;encoding&lt;/param-name&gt;</span><br><span class="line">		&lt;param-value&gt;utf-8&lt;/param-value&gt;</span><br><span class="line">	&lt;/init-param&gt;</span><br><span class="line">&lt;/filter&gt;</span><br><span class="line">&lt;filter-mapping&gt;</span><br><span class="line">	&lt;filter-name&gt;CharacterEncodingFilter&lt;/filter-name&gt;</span><br><span class="line">	&lt;url-pattern&gt;/*&lt;/url-pattern&gt;</span><br><span class="line">&lt;/filter-mapping&gt;</span><br></pre></td></tr></table></figure>
+
+<p><font color="red">2.启动springMVC</font></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&lt;servlet&gt;</span><br><span class="line">    &lt;servlet-name&gt;DispatcherServlet&lt;/servlet-name&gt;</span><br><span class="line">    &lt;servlet-class&gt;org.springframework.web.servlet.DispatcherServlet&lt;/servlet-class&gt;</span><br><span class="line">	&lt;!-- 参数：读取spring-mvc.xml --&gt;</span><br><span class="line">   	&lt;init-param&gt;</span><br><span class="line">		&lt;param-name&gt;contextConfigLocation&lt;/param-name&gt;</span><br><span class="line">       	&lt;param-value&gt;classpath:spring-mvc.xml&lt;/param-value&gt;</span><br><span class="line">    &lt;/init-param&gt;</span><br><span class="line">&lt;/servlet&gt;</span><br><span class="line">&lt;!-- 通过DispatherServlet过滤前端请求，后缀为.action的调用Controller --&gt;</span><br><span class="line">&lt;servlet-mapping&gt;</span><br><span class="line">	&lt;servlet-name&gt;DispatcherServlet&lt;/servlet-name&gt;</span><br><span class="line">	&lt;url-pattern&gt;*.action&lt;/url-pattern&gt;</span><br><span class="line">&lt;/servlet-mapping&gt;</span><br></pre></td></tr></table></figure>
+
+<p><font color="red">3.过滤资源</font></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;servlet-mapping&gt; </span><br><span class="line">	&lt;servlet-name&gt;default&lt;/servlet-name&gt; </span><br><span class="line">	&lt;url-pattern&gt;*.css&lt;/url-pattern&gt; </span><br><span class="line">&lt;/servlet-mapping&gt; </span><br></pre></td></tr></table></figure>
+
+<p><font color="red">4.启动spring</font></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;listener&gt;</span><br><span class="line">	&lt;listener-class&gt;org.springframework.web.context.ContextLoaderListener&lt;/listener-class&gt;</span><br><span class="line">&lt;/listener&gt;</span><br><span class="line">5.修改路径</span><br><span class="line">&lt;!-- classpath为类路径 --&gt;</span><br><span class="line">&lt;context-param&gt;</span><br><span class="line">		&lt;param-name&gt;contextConfigLocation&lt;/param-name&gt;</span><br><span class="line">		&lt;param-value&gt;classpath:applicationContext.xml&lt;/param-value&gt;</span><br><span class="line">&lt;/context-param&gt;</span><br></pre></td></tr></table></figure>
+
+<center><font color="red"><b>二、spring-mvc.xml</b></font></center>
+
+<p><font color="red">1.扫描Controller所在的包</font></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;contenxt:component-scan base-package=&quot;xyz.xqsr.controller&quot;/&gt;</span><br></pre></td></tr></table></figure>
+
+<p><font color="red">2.注解驱动</font></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;mvc:annotation-driven&gt;&lt;/mvc:annotation-driven&gt;</span><br></pre></td></tr></table></figure>
+
+<p><font color="red">3.视图解析器:简化在Controller类编写的视图路径 </font></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;bean class=&quot;org.springframework.web.servlet.view.InternalResourceViewResolver&quot;&gt;</span><br><span class="line">		&lt;property name=&quot;prefix&quot; value=&quot;/WEB-INF/jsp/&quot;/&gt;</span><br><span class="line">		&lt;property name=&quot;suffix&quot; value=&quot;.jsp&quot;/&gt;</span><br><span class="line">&lt;/bean&gt;</span><br></pre></td></tr></table></figure>
+
+<center><font color="red"><b>三、jdbc.properties</b></font></center>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">jdbc.url=jdbc:mysql://localhost:3306/ticket?useUnicode=true&amp;characterEncoding=UTF-8</span><br><span class="line">jdbc.driverClass=com.mysql.jdbc.Driver</span><br><span class="line">jdbc.user=root</span><br><span class="line">jdbc.password=</span><br></pre></td></tr></table></figure>
+
+<center><font color="red"><b>四、applicationContext.xml</b></font></center>
+
+<p><font color="red">1.读取jdbc.properties</font></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;context:property-placeholder location=&quot;classpath:jdbc.properties&quot;/&gt;</span><br></pre></td></tr></table></figure>
+
+<p><font color="red">2.创建DataSource</font></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;bean id=&quot;dataSource&quot; class=&quot;org.apache.commons.dbcp.BasicDataSource&quot;&gt;</span><br><span class="line">		&lt;property name=&quot;url&quot; value=&quot;$&#123;jdbc.url&#125;&quot;/&gt;</span><br><span class="line">		&lt;property name=&quot;driverClassName&quot; value=&quot;$&#123;jdbc.driverClass&#125;&quot;/&gt;</span><br><span class="line">		&lt;property name=&quot;username&quot; value=&quot;$&#123;jdbc.user&#125;&quot;/&gt;</span><br><span class="line">		&lt;property name=&quot;password&quot; value=&quot;$&#123;jdbc.password&#125;&quot;/&gt;</span><br><span class="line">		&lt;property name=&quot;maxActive&quot; value=&quot;10&quot;/&gt;</span><br><span class="line">            //最大链接数</span><br><span class="line">		&lt;property name=&quot;maxIdle&quot; value=&quot;5&quot;/&gt;</span><br><span class="line">            //最大空闲时间</span><br><span class="line">&lt;/bean&gt;	</span><br></pre></td></tr></table></figure>
+
+<p><font color="red">3.创建sqlSessionFactory对象</font></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">&lt;bean id=&quot;sqlSessionFactory&quot; class=&quot;org.mybatis.spring.SqlSessionFactoryBean&quot;&gt;</span><br><span class="line">	&lt;!-- 关联连接池 --&gt;</span><br><span class="line">	&lt;property name=&quot;dataSource&quot; ref=&quot;dataSource&quot;/&gt;</span><br><span class="line">	&lt;!-- 加载sql映射文件 --&gt;</span><br><span class="line">	&lt;property name=&quot;mapperLocations&quot; value=&quot;classpath:config/*.xml&quot;/&gt;</span><br><span class="line">	&lt;!-- 引入插件 --&gt;</span><br><span class="line">	&lt;property name=&quot;plugins&quot;&gt;</span><br><span class="line">		&lt;array&gt;</span><br><span class="line">			&lt;!-- mybatis分页插件 --&gt;</span><br><span class="line">			&lt;bean class=&quot;com.github.pagehelper.PageInterceptor&quot;&gt;</span><br><span class="line">				&lt;property name=&quot;properties&quot;&gt;</span><br><span class="line">					&lt;!-- </span><br><span class="line">					helperDialect:连接数据库的类型</span><br><span class="line">					 --&gt;</span><br><span class="line">					&lt;value&gt;</span><br><span class="line">						helperDialect=mysql</span><br><span class="line">					&lt;/value&gt;</span><br><span class="line">				&lt;/property&gt;</span><br><span class="line">			&lt;/bean&gt;</span><br><span class="line">		&lt;/array&gt;</span><br><span class="line">	&lt;/property&gt;</span><br><span class="line">&lt;/bean&gt;</span><br></pre></td></tr></table></figure>
+
+<p><font color="red">4.mapper接口的扫描</br><br>注意：如果使用mapper接口包扫描，那么每个mapper接口在spring容器中的id名称为类名</font></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;bean class=&quot;org.mybatis.spring.mapper.MapperScannerConfigurer&quot;&gt;</span><br><span class="line">    &lt;!-- 配置Mapper接口所在包路径  --&gt;</span><br><span class="line">    &lt;property name=&quot;basePackage&quot; value=&quot;xyz.xqsr.dao&quot;/&gt;</span><br><span class="line">&lt;/bean&gt;</span><br></pre></td></tr></table></figure>
+<p><font color="red">5.开启Spring的IOC注解扫描</br></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;context:component-scan base-package=&quot;xyz.xqsr&quot;/&gt;</span><br></pre></td></tr></table></figure>
+
+<p><font color="red">6.事务管理器</font></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;bean id=&quot;transactionManager&quot; class=&quot;org.springframework.jdbc.datasource.DataSourceTransactionManager&quot;&gt;</span><br><span class="line">	&lt;property name=&quot;dataSource&quot; ref=&quot;dataSource&quot;/&gt;</span><br><span class="line">&lt;/bean&gt;</span><br><span class="line">&lt;!-- 启用Spring事务注解 --&gt;</span><br><span class="line">&lt;tx:annotation-driven transaction-manager=&quot;transactionManager&quot;/&gt;</span><br></pre></td></tr></table></figure>
+
+<center><font color="red"><b>五、mapper中的默认配置</b></font></center>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; ?&gt;</span><br><span class="line">&lt;!DOCTYPE mapper</span><br><span class="line">PUBLIC &quot;-//mybatis.org//DTD Mapper 3.0//EN&quot;</span><br><span class="line">&quot;http://mybatis.org/dtd/mybatis-3-mapper.dtd&quot;&gt;</span><br><span class="line">&lt;!-- 该文件编写mybatis中的mapper接口里面的方法提供对应的sql语句 --&gt;</span><br><span class="line">&lt;!-- namespeace为关联mapper的dao层 --&gt;</span><br><span class="line">&lt;mapper namespace=&quot;xyz.xqsr.dao.UserDao&quot;&gt;</span><br><span class="line">&lt;/mapper&gt;</span><br></pre></td></tr></table></figure>
 
             <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
             <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
