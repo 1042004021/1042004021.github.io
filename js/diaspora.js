@@ -611,7 +611,7 @@ $(function() {
 					  clientSecret: comment.data('cs'),
 					  repo: comment.data('r'),
 					  owner: comment.data('o'),
-					  admin: comment.data('a'),
+					  admin: comment.data('a')+'',
 					  id: decodeURI(window.location.pathname),
 					  distractionFreeMode: comment.data('d')
 					})
