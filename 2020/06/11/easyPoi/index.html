@@ -73,7 +73,7 @@
 <p><font>准备导入的参数</font><br><font>setTitleRows为设置标题所占行数</font><br><font>setHeadRows为设置表头所占行数</font><br><font>创建List集合用于接收表格数据,泛型为实体类,将表格转换为实体类的集合</font><br><font>传入的参数为根据上传的表格获取输入流,实体类,读取表格参数</font></p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">employeeXlsx</span><span class="params">(MultipartFile empFile)</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">    <span class="comment">//准备导入的参数</span></span><br><span class="line">    ImportParams params = <span class="keyword">new</span> ImportParams();</span><br><span class="line">    params.setTitleRows(<span class="number">1</span>);</span><br><span class="line">	params.setHeadRows(<span class="number">1</span>);</span><br><span class="line">    List&lt;Employee&gt; list = ExcelImportUtil.importExcel(</span><br><span class="line">            empFile.getInputStream(),</span><br><span class="line">            Employee.class,</span><br><span class="line">            params);</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
             <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
-            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="true">
                 <source type="audio/mpeg" src="">
             </audio>
             
@@ -104,6 +104,10 @@
 
 
     </div>
+    
+        <div class='side'>
+				
+        </div>
     
 </div>
 
