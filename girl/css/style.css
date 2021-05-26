@@ -1,0 +1,237 @@
+body {
+  background-color: #74c4c8;
+  margin: 0;
+}
+
+.wrapper {
+	z-index: 3;
+  position: absolute;
+  top: 20%;
+  left: 80%;
+  transform: translate(-50%, -50%);
+}
+
+.face {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 20vmin;
+  height: 20vmin;
+  border-radius: 50%;
+  position: relative;
+  background: radial-gradient(ellipse at center, #ec7277, #ec7277 60%, #e1ecde calc( 60% + 1px ), #e1ecde 63%, #079554 calc( 63% + 1px ), #079554 68%, #056e3e calc( 68% + 1px ));
+  #box-shadow: -0.3vmin -0.3vmin  , 3vmin 3vmin  ;
+}
+.face:after {
+  content: '';
+  display: block;
+  width: 0.5vmin;
+  height: 0.5vmin;
+  border-radius: 50%;
+  background-color: #f8ccce;
+  position: absolute;
+}
+
+.quarter {
+  height: 80%;
+  width: 80%;
+  position: absolute;
+}
+.quarter div {
+  height: 10%;
+  width: 2.4%;
+  border-radius: 1vmin;
+  background-color: #c41a21;
+  position: absolute;
+}
+.quarter div:nth-child(even) {
+  top: 45%;
+  transform: rotate(90deg);
+}
+.quarter div:nth-child(odd) {
+  left: 48.8%;
+}
+.quarter div:nth-child(1) {
+  top: 0;
+}
+.quarter div:nth-child(2) {
+  right: 3%;
+}
+.quarter div:nth-child(3) {
+  bottom: 0;
+}
+.quarter div:nth-child(4) {
+  left: 3%;
+}
+
+.seeds {
+  width: 85%;
+  height: 85%;
+  border-radius: 50%;
+  overflow: hidden;
+  position: relative;
+}
+.seeds div {
+  display: block;
+  height: 3.5vmin;
+  width: 2vmin;
+  background-color: #e32f36;
+  border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+  position: absolute;
+}
+.seeds div:nth-child(1) {
+  top: 34%;
+  left: 6%;
+  transform: rotate(187deg);
+}
+.seeds div:nth-child(2) {
+  top: 11%;
+  left: 12%;
+  transform: rotate(293deg);
+}
+.seeds div:nth-child(3) {
+  top: 22%;
+  left: 18%;
+  transform: rotate(292deg);
+}
+.seeds div:nth-child(4) {
+  top: 38%;
+  left: 24%;
+  transform: rotate(145deg);
+}
+.seeds div:nth-child(5) {
+  top: 70%;
+  left: 30%;
+  transform: rotate(137deg);
+}
+.seeds div:nth-child(6) {
+  top: 35%;
+  left: 36%;
+  transform: rotate(64deg);
+}
+.seeds div:nth-child(7) {
+  top: 38%;
+  left: 42%;
+  transform: rotate(65deg);
+}
+.seeds div:nth-child(8) {
+  top: 47%;
+  left: 48%;
+  transform: rotate(153deg);
+}
+.seeds div:nth-child(9) {
+  top: 43%;
+  left: 54%;
+  transform: rotate(165deg);
+}
+.seeds div:nth-child(10) {
+  top: 2%;
+  left: 60%;
+  transform: rotate(139deg);
+}
+.seeds div:nth-child(11) {
+  top: 56%;
+  left: 66%;
+  transform: rotate(317deg);
+}
+.seeds div:nth-child(12) {
+  top: 48%;
+  left: 72%;
+  transform: rotate(72deg);
+}
+.seeds div:nth-child(13) {
+  top: 22%;
+  left: 78%;
+  transform: rotate(217deg);
+}
+.seeds div:nth-child(14) {
+  top: 54%;
+  left: 84%;
+  transform: rotate(208deg);
+}
+.seeds div:nth-child(15) {
+  top: 36%;
+  left: 90%;
+  transform: rotate(123deg);
+}
+
+.hands div {
+  position: absolute;
+  bottom: 50%;
+  border-radius: 1vmin;
+  transform-origin: 50% 100%;
+  transform: rotate(0);
+}
+.hands div.h {
+  height: 27%;
+  width: 2.4%;
+  left: 48.8%;
+  background-color: #6f0f13;
+}
+.hands div.m {
+  height: 40%;
+  width: 2.4%;
+  left: 48.8%;
+  background-color: #a0161b;
+}
+.hands div.s {
+  height: 50%;
+  width: 1%;
+  left: 49.5%;
+  bottom: 40%;
+  transform-origin: 50% 80%;
+  background-color: #f8ccce;
+}
+* {margin:0;padding:0;font-size:62.5%;}
+body {margin:0px;font-family:"微软雅黑",Arial;overflow:-Scroll;overflow-x:hidden;color:#000;}
+
+
+
+/*列表布局*/
+.gallery{
+  display: flex;
+  flex-wrap: wrap;
+   &::after {//处理最后一行
+      content: '';
+      flex-grow: 999999999;
+    }
+}
+
+.gallery div{
+  flex-grow: 1;
+  margin:5px;
+  background-color: violet;
+  height:400px;
+}
+.gallery img{
+  height:400px;
+  object-fit: cover;
+  max-width: 100%;
+  min-width: 100%;
+  vertical-align: bottom;
+}
+/*结束*/
+
+
+.pressing{
+    text-align: center;
+    position: fixed;
+    bottom: 78px;
+    left: 0;
+    right: 0;
+    z-index: 999;
+    width: 51%;
+    border: 2px solid #fff;
+    border-radius: 50px;
+    padding: 7px;
+    margin: 0 auto;
+}
+.pressing p{
+    font-size: 1.4rem;
+    color:#fff;
+}
+#goTopBtn{position:fixed;line-height: 38px;width: 46px;bottom: 47px;height: 46px;border-radius:50px;cursor:pointer;display:none;background:#000;-moz-opacity:0.5;-khtml-opacity:0.5;opacity:0.5;color:#FFFFFF;text-align:center;font-size: 5rem;z-index: 990;}
+@font-face{font-weight:400;font-style:normal;font-family:SinaHomeFont;src:url(../img/HomeFont.eot);src:url(../img/HomeFont.eot) format('embedded-opentype'),url(../img/HomeFont.woff) format('woff'),url(../img/HomeFont.ttf) format('truetype');}
+[class*=" icon_"],[class^=icon_]{text-transform:none;font-weight:400;font-style:normal;font-variant:normal;font-family:SinaHomeFont;line-height:1;speak:none;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;}
+
+.icon_top:before{content:"\e60f";}
