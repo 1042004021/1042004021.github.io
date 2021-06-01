@@ -1,0 +1,182 @@
+
+<!DOCTYPE html>
+<html lang="en" class="loading">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>java常见面试题一 - 一个默默无闻的博客</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate" />
+    <meta name="keywords" content="Fechin,"> 
+    <meta name="description" content="1.String和StringBuilder和StringBuffer区别String的底层是字符数组,所以String是不可变字符串,每次改变就是创建新的字符串StringBuilder和Stri,"> 
+    <meta name="author" content="elder"> 
+    <link rel="alternative" href="atom.xml" title="一个默默无闻的博客" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.png"> 
+    
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+
+    
+<link rel="stylesheet" href="/css/diaspora.css">
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body class="loading">
+    <span id="config-title" style="display:none">一个默默无闻的博客</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <a class="iconfont icon-home image-icon" href="javascript:;" data-url="http://example.com"></a>
+    <div title="播放/暂停" class="iconfont icon-play"></div>
+    <h3 class="subtitle">java常见面试题一</h3>
+    <div class="social">
+        <div>
+            <div class="share">
+                <a title="获取二维码" class="iconfont icon-scan" href="javascript:;"></a>
+            </div>
+            <div id="qr"></div>
+        </div>
+    </div>
+    <div class="scrollbar"></div>
+</div>
+
+    <div class="section">
+        <div class="article">
+    <div class='main'>
+        <h1 class="title">java常见面试题一</h1>
+        <div class="stuff">
+            <span>六月 01, 2021</span>
+            
+  <ul class="post-tags-list" itemprop="keywords"><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/%E9%9D%A2%E8%AF%95%E9%A2%98/" rel="tag">面试题</a></li></ul>
+
+
+        </div>
+        <div class="content markdown">
+            <h4 id="1-String和StringBuilder和StringBuffer区别"><a href="#1-String和StringBuilder和StringBuffer区别" class="headerlink" title="1.String和StringBuilder和StringBuffer区别"></a>1.String和StringBuilder和StringBuffer区别</h4><h5 id="String的底层是字符数组-所以String是不可变字符串-每次改变就是创建新的字符串"><a href="#String的底层是字符数组-所以String是不可变字符串-每次改变就是创建新的字符串" class="headerlink" title="String的底层是字符数组,所以String是不可变字符串,每次改变就是创建新的字符串"></a>String的底层是字符数组,所以String是不可变字符串,每次改变就是创建新的字符串</h5><h5 id="StringBuilder和StringBuffer是可变字符串"><a href="#StringBuilder和StringBuffer是可变字符串" class="headerlink" title="StringBuilder和StringBuffer是可变字符串"></a>StringBuilder和StringBuffer是可变字符串</h5><h5 id="但是StringBuilder是线程不安全的-StringBuffer是线程安全的-方法中使用synchronized来保证线程同步-所以StringBuiler的效率高于StringBuffer"><a href="#但是StringBuilder是线程不安全的-StringBuffer是线程安全的-方法中使用synchronized来保证线程同步-所以StringBuiler的效率高于StringBuffer" class="headerlink" title="但是StringBuilder是线程不安全的,StringBuffer是线程安全的,方法中使用synchronized来保证线程同步,所以StringBuiler的效率高于StringBuffer"></a>但是StringBuilder是线程不安全的,StringBuffer是线程安全的,方法中使用synchronized来保证线程同步,所以StringBuiler的效率高于StringBuffer</h5><h4 id="2-ArrayList和LinkedList区别"><a href="#2-ArrayList和LinkedList区别" class="headerlink" title="2.ArrayList和LinkedList区别"></a>2.ArrayList和LinkedList区别</h4><h5 id="ArrayList-是基于数组的集合-当执行修改和删除元素时会涉及到移位操作-所以相对来说-添加删除性能低"><a href="#ArrayList-是基于数组的集合-当执行修改和删除元素时会涉及到移位操作-所以相对来说-添加删除性能低" class="headerlink" title="ArrayList:是基于数组的集合,当执行修改和删除元素时会涉及到移位操作,所以相对来说,添加删除性能低"></a>ArrayList:是基于数组的集合,当执行修改和删除元素时会涉及到移位操作,所以相对来说,添加删除性能低</h5><h5 id="LinkedList-基于链表的集合-因为没有索引-所以查询元素时会遍历元素-所以查询修改性能低"><a href="#LinkedList-基于链表的集合-因为没有索引-所以查询元素时会遍历元素-所以查询修改性能低" class="headerlink" title="LinkedList:基于链表的集合,因为没有索引,所以查询元素时会遍历元素,所以查询修改性能低"></a>LinkedList:基于链表的集合,因为没有索引,所以查询元素时会遍历元素,所以查询修改性能低</h5><h4 id="3-创建线程是几种方式"><a href="#3-创建线程是几种方式" class="headerlink" title="3.创建线程是几种方式"></a>3.创建线程是几种方式</h4><h5 id="创建线程有三种方式"><a href="#创建线程有三种方式" class="headerlink" title="创建线程有三种方式:"></a>创建线程有三种方式:</h5><h5 id="方式一-通过继承Thread"><a href="#方式一-通过继承Thread" class="headerlink" title="方式一:通过继承Thread"></a>方式一:通过继承Thread</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MyThread</span> <span class="keyword">extends</span> <span class="title">Threan</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">run</span><span class="params">()</span></span>&#123;</span><br><span class="line">       	System.out.println(<span class="string">&quot;线程一&quot;</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">MyThread mt = <span class="keyword">new</span> MyThread();</span><br><span class="line">mt.start();</span><br></pre></td></tr></table></figure>
+
+<h5 id="方式二-通过实现Runnable"><a href="#方式二-通过实现Runnable" class="headerlink" title="方式二:通过实现Runnable"></a>方式二:通过实现Runnable</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MyRunnable</span> <span class="title">implement</span> <span class="title">Runnable</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">run</span><span class="params">()</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;线程二&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">MyRunnable mr = <span class="keyword">new</span> MyRunnable();</span><br><span class="line">Thread thread = <span class="keyword">new</span> Thread(myRunnable);</span><br><span class="line">thread.start();</span><br></pre></td></tr></table></figure>
+
+<h5 id="方式三-通过实现Callable"><a href="#方式三-通过实现Callable" class="headerlink" title="方式三:通过实现Callable"></a>方式三:通过实现Callable</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MyCallable</span> <span class="title">implement</span> <span class="title">Callable</span></span>&#123;</span><br><span class="line">    <span class="function">Object <span class="title">call</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;线程三&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">MyCallable myCallable = <span class="keyword">new</span> Callable();</span><br><span class="line">FutureTask ft = <span class="keyword">new</span> FutureTask(myCallable);</span><br><span class="line">Thread thread = <span class="keyword">new</span> Thread(ft);</span><br><span class="line">thread.start();</span><br><span class="line"><span class="comment">//获取线程运行完的返回值</span></span><br><span class="line">ft.get()</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="4-直接调用线程的start方法和run方法有什么区别"><a href="#4-直接调用线程的start方法和run方法有什么区别" class="headerlink" title="4.直接调用线程的start方法和run方法有什么区别"></a>4.直接调用线程的start方法和run方法有什么区别</h4><h5 id="调用start方法是创建一个新线程-让它拥有获取cpu资源的能力"><a href="#调用start方法是创建一个新线程-让它拥有获取cpu资源的能力" class="headerlink" title="调用start方法是创建一个新线程,让它拥有获取cpu资源的能力"></a>调用start方法是创建一个新线程,让它拥有获取cpu资源的能力</h5><h5 id="直接调用run方法不会创建新的线程-只是调用run方法"><a href="#直接调用run方法不会创建新的线程-只是调用run方法" class="headerlink" title="直接调用run方法不会创建新的线程,只是调用run方法"></a>直接调用run方法不会创建新的线程,只是调用run方法</h5><h4 id="5-项目开发流程"><a href="#5-项目开发流程" class="headerlink" title="5.项目开发流程"></a>5.项目开发流程</h4><h5 id="项目准备"><a href="#项目准备" class="headerlink" title="项目准备"></a>项目准备</h5><h5 id="需求分析"><a href="#需求分析" class="headerlink" title="需求分析"></a>需求分析</h5><h5 id="系统分析"><a href="#系统分析" class="headerlink" title="系统分析"></a>系统分析</h5><h5 id="编写代码"><a href="#编写代码" class="headerlink" title="编写代码"></a>编写代码</h5><h5 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h5><h5 id="维护"><a href="#维护" class="headerlink" title="维护"></a>维护</h5><h4 id="6-maven的打包和安装用什么命令"><a href="#6-maven的打包和安装用什么命令" class="headerlink" title="6.maven的打包和安装用什么命令"></a>6.maven的打包和安装用什么命令</h4><h5 id="mvn-packge-打包"><a href="#mvn-packge-打包" class="headerlink" title="mvn packge:打包"></a>mvn packge:打包</h5><h5 id="mvn-install-安装到仓库"><a href="#mvn-install-安装到仓库" class="headerlink" title="mvn install:安装到仓库"></a>mvn install:安装到仓库</h5>
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="true">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+                <ul id="audio-list" style="display:none">
+                    
+                        
+                            <li title='0' data-url='http://link.hhtjim.com/163/425570952.mp3'></li>
+                        
+                    
+                        
+                            <li title='1' data-url='http://link.hhtjim.com/163/425570952.mp3'></li>
+                        
+                    
+                </ul>
+            
+        </div>
+        
+    <div id='gitalk-container' class="comment link"
+		data-enable='true'
+        data-ae='true'
+        data-ci='ec68226ca114a7ac4e41'
+        data-cs='66e5dfaf1178feadb8c8a61192441c6a13a815eb'
+        data-r='comment'
+        data-o='1042004021'
+        data-a='1042004021'
+        data-d='false'
+    >查看评论</div>
+
+
+    </div>
+    
+</div>
+
+
+    </div>
+</div>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"jsonPath":"/live2dw/assets/shizuku.model.json"},"display":{"position":"right","width":300,"height":600},"mobile":{"show":false},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+
+<script src="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+
+
+<script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/typed.js"></script>
+<script src="/js/diaspora.js"></script>
+
+
+<link rel="stylesheet" href="/photoswipe/photoswipe.css">
+<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+
+
+<script src="/photoswipe/photoswipe.min.js"></script>
+<script src="/photoswipe/photoswipe-ui-default.min.js"></script>
+
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+</html>
