@@ -70,7 +70,7 @@
 
 <h3 id="-4"><a href="#-4" class="headerlink" title=""></a><font color=red></h3><h3 id="注意-通过这种方式创建多个Thread实例来创建多个线程时使用的是同一个Callable实例-且这种方式会在线程结束时返回数据-数据类型可以为任意类型"><a href="#注意-通过这种方式创建多个Thread实例来创建多个线程时使用的是同一个Callable实例-且这种方式会在线程结束时返回数据-数据类型可以为任意类型" class="headerlink" title="注意:通过这种方式创建多个Thread实例来创建多个线程时使用的是同一个Callable实例,且这种方式会在线程结束时返回数据,数据类型可以为任意类型"></a>注意:通过这种方式创建多个Thread实例来创建多个线程时使用的是同一个Callable实例,且这种方式会在线程结束时返回数据,数据类型可以为任意类型</h3><h3 id="lt-font"><a href="#lt-font" class="headerlink" title="&lt;/font"></a>&lt;/font</h3><h3 id="在测试中-通过继承Thread和实现Runnable来创建线程在测试方法中与主线程同时抢占cpu资源-且主线程不会等待子线程结束-而在main方法中-以及实践运用时-所有创建线程的方法中-主线程都与子线程分离-即两个线程没有关联"><a href="#在测试中-通过继承Thread和实现Runnable来创建线程在测试方法中与主线程同时抢占cpu资源-且主线程不会等待子线程结束-而在main方法中-以及实践运用时-所有创建线程的方法中-主线程都与子线程分离-即两个线程没有关联" class="headerlink" title="在测试中,通过继承Thread和实现Runnable来创建线程在测试方法中与主线程同时抢占cpu资源,且主线程不会等待子线程结束,而在main方法中,以及实践运用时,所有创建线程的方法中,主线程都与子线程分离,即两个线程没有关联"></a>在测试中,通过继承Thread和实现Runnable来创建线程在测试方法中与主线程同时抢占cpu资源,且主线程不会等待子线程结束,而在main方法中,以及实践运用时,所有创建线程的方法中,主线程都与子线程分离,即两个线程没有关联</h3><h3 id="实现FutureTask创建线程如果需要获取返回值-主线程会等待子线程结束后才能获取返回值-所以在测试类中主线程会等待子线程"><a href="#实现FutureTask创建线程如果需要获取返回值-主线程会等待子线程结束后才能获取返回值-所以在测试类中主线程会等待子线程" class="headerlink" title="实现FutureTask创建线程如果需要获取返回值,主线程会等待子线程结束后才能获取返回值,所以在测试类中主线程会等待子线程"></a>实现FutureTask创建线程如果需要获取返回值,主线程会等待子线程结束后才能获取返回值,所以在测试类中主线程会等待子线程</h3>
             <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
-            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="true">
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
                 <source type="audio/mpeg" src="">
             </audio>
             
