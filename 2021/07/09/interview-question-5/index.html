@@ -1,0 +1,211 @@
+
+<!DOCTYPE html>
+<html lang="en" class="loading">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>JAVA进阶面试题五 - 一个默默无闻的博客</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate" />
+    <meta name="keywords" content="Fechin,"> 
+    <meta name="description" content="1.Spring的Bean被指定为prototype以及singleton有什么区别springbean创建bean有两种形式,一种是单列模式,一种是多例模式
+当被指定为prototype时为多例模,"> 
+    <meta name="author" content="elder"> 
+    <link rel="alternative" href="atom.xml" title="一个默默无闻的博客" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.png"> 
+    
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+
+    
+<link rel="stylesheet" href="/css/diaspora.css">
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body class="loading">
+    <span id="config-title" style="display:none">一个默默无闻的博客</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <a class="iconfont icon-home image-icon" href="javascript:;" data-url="http://example.com"></a>
+    <div title="播放/暂停" class="iconfont icon-play"></div>
+    <h3 class="subtitle">JAVA进阶面试题五</h3>
+    <div class="social">
+        <div>
+            <div class="share">
+                <a title="获取二维码" class="iconfont icon-scan" href="javascript:;"></a>
+            </div>
+            <div id="qr"></div>
+        </div>
+    </div>
+    <div class="scrollbar"></div>
+</div>
+
+    <div class="section">
+        <div class="article">
+    <div class='main'>
+        <h1 class="title">JAVA进阶面试题五</h1>
+        <div class="stuff">
+            <span>七月 09, 2021</span>
+            
+  <ul class="post-tags-list" itemprop="keywords"><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/%E9%9D%A2%E8%AF%95%E9%A2%98/" rel="tag">面试题</a></li></ul>
+
+
+        </div>
+        <div class="content markdown">
+            <h4 id="1-Spring的Bean被指定为prototype以及singleton有什么区别"><a href="#1-Spring的Bean被指定为prototype以及singleton有什么区别" class="headerlink" title="1.Spring的Bean被指定为prototype以及singleton有什么区别"></a>1.Spring的Bean被指定为prototype以及singleton有什么区别</h4><p>springbean创建bean有两种形式,一种是单列模式,一种是多例模式</p>
+<p>当被指定为prototype时为多例模式,当每次需要使用bean的时候,spring就创建一个新的对象</p>
+<p>当被指定为singleton时为单例模式,spring会创建一个对象放进Map中,当需要使用这个bean的时候就将map中的对象返回</p>
+<h4 id="2-BeanFactory和ApplicationContext有什么区别"><a href="#2-BeanFactory和ApplicationContext有什么区别" class="headerlink" title="2.BeanFactory和ApplicationContext有什么区别"></a>2.BeanFactory和ApplicationContext有什么区别</h4><p>BeanFactory是一个接口,定义了IOC容器的最基本形式,还定义了IOC容器应遵守的最基本形式,给具体的IOC容器的实现提供了规范，</p>
+<p>ApplicationContext是BeanFactory的子接口,除了拥有BeanFactory中的功能外还拥有国际化,事件等服务</p>
+<h4 id="3-BeanFactory和FactoryBean的区别"><a href="#3-BeanFactory和FactoryBean的区别" class="headerlink" title="3.BeanFactory和FactoryBean的区别"></a>3.BeanFactory和FactoryBean的区别</h4><p>BeanFactory是一个接口,定义了IOC容器的最基本形式,还定义了IOC容器应遵守的最基本形式,给具体的IOC容器的实现提供了规范，本质上是一个工厂.</p>
+<p>FactoryBean则是一个Bean,它为Bean的实现提供了更加灵活的方式</p>
+<h4 id="4-介绍一下Spring框架的组成"><a href="#4-介绍一下Spring框架的组成" class="headerlink" title="4.介绍一下Spring框架的组成"></a>4.介绍一下Spring框架的组成</h4><p><img src="http://c.biancheng.net/uploads/allimg/190606/5-1Z606104H1294.gif" alt="Spring的体系结构"></p>
+<h4 id="1-Data-Access-Integration（数据访问／集成）"><a href="#1-Data-Access-Integration（数据访问／集成）" class="headerlink" title="1. Data Access/Integration（数据访问／集成）"></a>1. Data Access/Integration（数据访问／集成）</h4><p>数据访问/集成层包括 JDBC、ORM、OXM、JMS 和 Transactions 模块，具体介绍如下。</p>
+<ul>
+<li>JDBC 模块：提供了一个 JDBC 的抽象层，大幅度减少了在开发过程中对数据库操作的编码。</li>
+<li>ORM 模块：对流行的对象关系映射 API，包括 JPA、JDO、<a target="_blank" rel="noopener" href="http://c.biancheng.net/hibernate/">Hibernate</a> 和 iBatis 提供了的集成层。</li>
+<li>OXM 模块：提供了一个支持对象/XML 映射的抽象层实现，如 JAXB、Castor、XMLBeans、JiBX 和 XStream。</li>
+<li>JMS 模块：指 <a target="_blank" rel="noopener" href="http://c.biancheng.net/java/">Java</a> 消息服务，包含的功能为生产和消费的信息。</li>
+<li>Transactions 事务模块：支持编程和声明式事务管理实现特殊接口类，并为所有的 POJO。</li>
+</ul>
+<h4 id="2-Web-模块"><a href="#2-Web-模块" class="headerlink" title="2. Web 模块"></a>2. Web 模块</h4><p>Spring 的 Web 层包括 Web、<a target="_blank" rel="noopener" href="http://c.biancheng.net/servlet/">Servlet</a>、Struts 和 Portlet 组件，具体介绍如下。</p>
+<ul>
+<li>Web 模块：提供了基本的 Web 开发集成特性，例如多文件上传功能、使用的 Servlet 监听器的 IoC 容器初始化以及 Web 应用上下文。</li>
+<li>Servlet模块：包括 Spring 模型—视图—控制器（MVC）实现 Web 应用程序。</li>
+<li>Struts 模块：包含支持类内的 Spring 应用程序，集成了经典的 Struts Web 层。</li>
+<li>Portlet 模块：提供了在 Portlet 环境中使用 MV C实现，类似 Web-Servlet 模块的功能。</li>
+</ul>
+<h4 id="3-Core-Container（核心容器）"><a href="#3-Core-Container（核心容器）" class="headerlink" title="3. Core Container（核心容器）"></a>3. Core Container（核心容器）</h4><p>Spring 的核心容器是其他模块建立的基础，由 Beans 模块、Core 核心模块、Context 上下文模块和 Expression Language 表达式语言模块组成，具体介绍如下。</p>
+<ul>
+<li>Beans 模块：提供了 BeanFactory，是工厂模式的经典实现，Spring 将管理对象称为 Bean。</li>
+<li>Core 核心模块：提供了 Spring 框架的基本组成部分，包括 IoC 和 DI 功能。</li>
+<li>Context 上下文模块：建立在核心和 Beans 模块的基础之上，它是访问定义和配置任何对象的媒介。ApplicationContext 接口是上下文模块的焦点。</li>
+<li>Expression Language 模块：是运行时查询和操作对象图的强大的表达式语言。</li>
+</ul>
+<h4 id="4-其他模块"><a href="#4-其他模块" class="headerlink" title="4. 其他模块"></a>4. 其他模块</h4><p>Spring的其他模块还有 AOP、Aspects、Instrumentation 以及 Test 模块，具体介绍如下。</p>
+<ul>
+<li>AOP 模块：提供了面向切面编程实现，允许定义方法拦截器和切入点，将代码按照功能进行分离，以降低耦合性。</li>
+<li>Aspects 模块：提供与 AspectJ 的集成，是一个功能强大且成熟的面向切面编程（AOP）框架。</li>
+<li>Instrumentation 模块：提供了类工具的支持和类加载器的实现，可以在特定的应用服务器中使用。</li>
+<li>Test 模块：支持 Spring 组件，使用 JUnit 或 TestNG 框架的测试。</li>
+</ul>
+<h3 id="文章来源-Spring体系结构详解-biancheng-net"><a href="#文章来源-Spring体系结构详解-biancheng-net" class="headerlink" title="文章来源:Spring体系结构详解 (biancheng.net)"></a>文章来源:<a target="_blank" rel="noopener" href="http://c.biancheng.net/view/4242.html">Spring体系结构详解 (biancheng.net)</a></h3><h4 id="5-Spring的Bean懒加载和非懒加载有什么区别"><a href="#5-Spring的Bean懒加载和非懒加载有什么区别" class="headerlink" title="5.Spring的Bean懒加载和非懒加载有什么区别"></a>5.Spring的Bean懒加载和非懒加载有什么区别</h4><p>spring中的bean懒加载为当需要使用到bean的时候才会创建这个bean</p>
+<p>非懒加载又叫饥饿加载也叫迫切加载,即为当spring初始化时就会创建bean</p>
+<h4 id="6-Spring的依赖注入方式有哪些？"><a href="#6-Spring的依赖注入方式有哪些？" class="headerlink" title="6.Spring的依赖注入方式有哪些？"></a>6.Spring的依赖注入方式有哪些？</h4><p>有三种:setter方式注入,依赖于类中的setter方法</p>
+<p>构造方法注入,依赖于类中全参构造方法</p>
+<p>注解注入:@AutoWired,@Resource</p>
+
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+                <ul id="audio-list" style="display:none">
+                    
+                        
+                            <li title='0' data-url='http://link.hhtjim.com/163/425570952.mp3'></li>
+                        
+                    
+                        
+                            <li title='1' data-url='http://link.hhtjim.com/163/425570952.mp3'></li>
+                        
+                    
+                </ul>
+            
+        </div>
+        
+    <div id='gitalk-container' class="comment link"
+		data-enable='true'
+        data-ae='true'
+        data-ci='ec68226ca114a7ac4e41'
+        data-cs='66e5dfaf1178feadb8c8a61192441c6a13a815eb'
+        data-r='comment'
+        data-o='1042004021'
+        data-a='1042004021'
+        data-d='false'
+    >查看评论</div>
+
+
+    </div>
+    
+</div>
+
+
+    </div>
+</div>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"jsonPath":"/live2dw/assets/shizuku.model.json"},"display":{"position":"right","width":300,"height":600},"mobile":{"show":false},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+
+<script src="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+
+
+<script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/typed.js"></script>
+<script src="/js/diaspora.js"></script>
+
+
+<link rel="stylesheet" href="/photoswipe/photoswipe.css">
+<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+
+
+<script src="/photoswipe/photoswipe.min.js"></script>
+<script src="/photoswipe/photoswipe-ui-default.min.js"></script>
+
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+</html>
