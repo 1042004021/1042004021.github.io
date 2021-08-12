@@ -10,13 +10,12 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="google" content="notranslate" />
     <meta name="keywords" content="Fechin,"> 
-    <meta name="description" content="1.String和StringBuilder和StringBuffer区别String的底层是字符数组,所以String是不可变字符串,每次改变就是创建新的字符串StringBuilder和Stri,"> 
+    <meta name="description" content="1.String和StringBuilder和StringBuffer区别String的底层是字符数组,所以String是不可变字符串,每次改变就是创建新的字符串
+StringBuilder和Str,"> 
     <meta name="author" content="elder"> 
     <link rel="alternative" href="atom.xml" title="一个默默无闻的博客" type="application/atom+xml"> 
     <link rel="icon" href="/img/favicon.png"> 
     
-<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
-
     
 <link rel="stylesheet" href="/css/diaspora.css">
 
@@ -54,23 +53,58 @@
 
         </div>
         <div class="content markdown">
-            <h4 id="1-String和StringBuilder和StringBuffer区别"><a href="#1-String和StringBuilder和StringBuffer区别" class="headerlink" title="1.String和StringBuilder和StringBuffer区别"></a>1.String和StringBuilder和StringBuffer区别</h4><h5 id="String的底层是字符数组-所以String是不可变字符串-每次改变就是创建新的字符串"><a href="#String的底层是字符数组-所以String是不可变字符串-每次改变就是创建新的字符串" class="headerlink" title="String的底层是字符数组,所以String是不可变字符串,每次改变就是创建新的字符串"></a>String的底层是字符数组,所以String是不可变字符串,每次改变就是创建新的字符串</h5><h5 id="StringBuilder和StringBuffer是可变字符串"><a href="#StringBuilder和StringBuffer是可变字符串" class="headerlink" title="StringBuilder和StringBuffer是可变字符串"></a>StringBuilder和StringBuffer是可变字符串</h5><h5 id="但是StringBuilder是线程不安全的-StringBuffer是线程安全的-方法中使用synchronized来保证线程同步-所以StringBuiler的效率高于StringBuffer"><a href="#但是StringBuilder是线程不安全的-StringBuffer是线程安全的-方法中使用synchronized来保证线程同步-所以StringBuiler的效率高于StringBuffer" class="headerlink" title="但是StringBuilder是线程不安全的,StringBuffer是线程安全的,方法中使用synchronized来保证线程同步,所以StringBuiler的效率高于StringBuffer"></a>但是StringBuilder是线程不安全的,StringBuffer是线程安全的,方法中使用synchronized来保证线程同步,所以StringBuiler的效率高于StringBuffer</h5><h4 id="2-ArrayList和LinkedList区别"><a href="#2-ArrayList和LinkedList区别" class="headerlink" title="2.ArrayList和LinkedList区别"></a>2.ArrayList和LinkedList区别</h4><h5 id="ArrayList-是基于数组的集合-当执行插入和删除元素时会涉及到移位操作-所以相对来说-添加删除性能低"><a href="#ArrayList-是基于数组的集合-当执行插入和删除元素时会涉及到移位操作-所以相对来说-添加删除性能低" class="headerlink" title="ArrayList:是基于数组的集合,当执行插入和删除元素时会涉及到移位操作,所以相对来说,添加删除性能低"></a>ArrayList:是基于数组的集合,当执行插入和删除元素时会涉及到移位操作,所以相对来说,添加删除性能低</h5><h5 id="LinkedList-基于链表的集合-因为没有索引-所以查询元素时会遍历元素-所以查询修改性能低"><a href="#LinkedList-基于链表的集合-因为没有索引-所以查询元素时会遍历元素-所以查询修改性能低" class="headerlink" title="LinkedList:基于链表的集合,因为没有索引,所以查询元素时会遍历元素,所以查询修改性能低"></a>LinkedList:基于链表的集合,因为没有索引,所以查询元素时会遍历元素,所以查询修改性能低</h5><h4 id="3-创建线程是几种方式"><a href="#3-创建线程是几种方式" class="headerlink" title="3.创建线程是几种方式"></a>3.创建线程是几种方式</h4><h5 id="创建线程有三种方式"><a href="#创建线程有三种方式" class="headerlink" title="创建线程有三种方式:"></a>创建线程有三种方式:</h5><h5 id="方式一-通过继承Thread"><a href="#方式一-通过继承Thread" class="headerlink" title="方式一:通过继承Thread"></a>方式一:通过继承Thread</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MyThread</span> <span class="keyword">extends</span> <span class="title">Threan</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">run</span><span class="params">()</span></span>&#123;</span><br><span class="line">       	System.out.println(<span class="string">&quot;线程一&quot;</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+            <h4 id="1-String和StringBuilder和StringBuffer区别"><a href="#1-String和StringBuilder和StringBuffer区别" class="headerlink" title="1.String和StringBuilder和StringBuffer区别"></a>1.String和StringBuilder和StringBuffer区别</h4><p>String的底层是字符数组,所以String是不可变字符串,每次改变就是创建新的字符串</p>
+<p>StringBuilder和StringBuffer是可变字符串</p>
+<p>但是StringBuilder是线程不安全的,StringBuffer是线程安全的,方法中使用synchronized来保证线程同步,所以StringBuiler的效率高于StringBuffer</p>
+<h4 id="2-ArrayList和LinkedList区别"><a href="#2-ArrayList和LinkedList区别" class="headerlink" title="2.ArrayList和LinkedList区别"></a>2.ArrayList和LinkedList区别</h4><p>ArrayList:是基于数组的集合,当执行插入和删除元素时会涉及到移位操作,所以相对来说,添加删除性能低</p>
+<p>LinkedList:基于链表的集合,因为没有索引,所以查询元素时会遍历元素,所以查询修改性能低</p>
+<h4 id="3-创建线程是几种方式"><a href="#3-创建线程是几种方式" class="headerlink" title="3.创建线程是几种方式"></a>3.创建线程是几种方式</h4><p>创建线程有三种方式:</p>
+<p>方式一:通过继承Thread</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MyThread</span> <span class="keyword">extends</span> <span class="title">Threan</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">run</span><span class="params">()</span></span>&#123;</span><br><span class="line">       	System.out.println(<span class="string">&quot;线程一&quot;</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">MyThread mt = <span class="keyword">new</span> MyThread();</span><br><span class="line">mt.start();</span><br></pre></td></tr></table></figure>
 
-<h5 id="方式二-通过实现Runnable"><a href="#方式二-通过实现Runnable" class="headerlink" title="方式二:通过实现Runnable"></a>方式二:通过实现Runnable</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MyRunnable</span> <span class="title">implement</span> <span class="title">Runnable</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">run</span><span class="params">()</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;线程二&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>方式二:通过实现Runnable</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MyRunnable</span> <span class="title">implement</span> <span class="title">Runnable</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">run</span><span class="params">()</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;线程二&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">MyRunnable mr = <span class="keyword">new</span> MyRunnable();</span><br><span class="line">Thread thread = <span class="keyword">new</span> Thread(myRunnable);</span><br><span class="line">thread.start();</span><br></pre></td></tr></table></figure>
 
-<h5 id="方式三-通过实现Callable"><a href="#方式三-通过实现Callable" class="headerlink" title="方式三:通过实现Callable"></a>方式三:通过实现Callable</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MyCallable</span> <span class="title">implement</span> <span class="title">Callable</span></span>&#123;</span><br><span class="line">    <span class="function">Object <span class="title">call</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;线程三&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>方式三:通过实现Callable</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MyCallable</span> <span class="title">implement</span> <span class="title">Callable</span></span>&#123;</span><br><span class="line">    <span class="function">Object <span class="title">call</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;线程三&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">MyCallable myCallable = <span class="keyword">new</span> Callable();</span><br><span class="line">FutureTask ft = <span class="keyword">new</span> FutureTask(myCallable);</span><br><span class="line">Thread thread = <span class="keyword">new</span> Thread(ft);</span><br><span class="line">thread.start();</span><br><span class="line"><span class="comment">//获取线程运行完的返回值</span></span><br><span class="line">ft.get()</span><br></pre></td></tr></table></figure>
 
 
 
-<h4 id="4-直接调用线程的start方法和run方法有什么区别"><a href="#4-直接调用线程的start方法和run方法有什么区别" class="headerlink" title="4.直接调用线程的start方法和run方法有什么区别"></a>4.直接调用线程的start方法和run方法有什么区别</h4><h5 id="调用start方法是创建一个新线程-让它拥有获取cpu资源的能力"><a href="#调用start方法是创建一个新线程-让它拥有获取cpu资源的能力" class="headerlink" title="调用start方法是创建一个新线程,让它拥有获取cpu资源的能力"></a>调用start方法是创建一个新线程,让它拥有获取cpu资源的能力</h5><h5 id="直接调用run方法不会创建新的线程-只是调用run方法"><a href="#直接调用run方法不会创建新的线程-只是调用run方法" class="headerlink" title="直接调用run方法不会创建新的线程,只是调用run方法"></a>直接调用run方法不会创建新的线程,只是调用run方法</h5><h4 id="5-项目开发流程"><a href="#5-项目开发流程" class="headerlink" title="5.项目开发流程"></a>5.项目开发流程</h4><h5 id="项目准备"><a href="#项目准备" class="headerlink" title="项目准备"></a>项目准备</h5><h5 id="需求分析"><a href="#需求分析" class="headerlink" title="需求分析"></a>需求分析</h5><h5 id="系统分析"><a href="#系统分析" class="headerlink" title="系统分析"></a>系统分析</h5><h5 id="编写代码"><a href="#编写代码" class="headerlink" title="编写代码"></a>编写代码</h5><h5 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h5><h5 id="维护"><a href="#维护" class="headerlink" title="维护"></a>维护</h5><h4 id="6-maven的打包和安装用什么命令"><a href="#6-maven的打包和安装用什么命令" class="headerlink" title="6.maven的打包和安装用什么命令"></a>6.maven的打包和安装用什么命令</h4><h5 id="mvn-packge-打包"><a href="#mvn-packge-打包" class="headerlink" title="mvn packge:打包"></a>mvn packge:打包</h5><h5 id="mvn-install-安装到仓库"><a href="#mvn-install-安装到仓库" class="headerlink" title="mvn install:安装到仓库"></a>mvn install:安装到仓库</h5><h4 id="7-ArrayList和vector区别"><a href="#7-ArrayList和vector区别" class="headerlink" title="7.ArrayList和vector区别"></a>7.ArrayList和vector区别</h4><h5 id="ArrayList和vector都是基于数组的集合-而vector是线程安全的-底层方法中有synchronize修饰-ArrayList则是不保证线程安全"><a href="#ArrayList和vector都是基于数组的集合-而vector是线程安全的-底层方法中有synchronize修饰-ArrayList则是不保证线程安全" class="headerlink" title="ArrayList和vector都是基于数组的集合,而vector是线程安全的,底层方法中有synchronize修饰,ArrayList则是不保证线程安全"></a>ArrayList和vector都是基于数组的集合,而vector是线程安全的,底层方法中有synchronize修饰,ArrayList则是不保证线程安全</h5><h5 id="在扩容方面二者也有区别-ArrayList添加数据当容量不足时自动扩容到当前容量的1-5倍-而vector则是扩容到当前容量的2倍"><a href="#在扩容方面二者也有区别-ArrayList添加数据当容量不足时自动扩容到当前容量的1-5倍-而vector则是扩容到当前容量的2倍" class="headerlink" title="在扩容方面二者也有区别,ArrayList添加数据当容量不足时自动扩容到当前容量的1.5倍,而vector则是扩容到当前容量的2倍"></a>在扩容方面二者也有区别,ArrayList添加数据当容量不足时自动扩容到当前容量的1.5倍,而vector则是扩容到当前容量的2倍</h5><h4 id="8-说一下面向对象的几大特征"><a href="#8-说一下面向对象的几大特征" class="headerlink" title="8.说一下面向对象的几大特征"></a>8.说一下面向对象的几大特征</h4><h5 id="封装-封装是指将类中的成员变量私有化-将内部属性隐藏起来-一些不需要隐藏的属性提供公共的方法给外部访问"><a href="#封装-封装是指将类中的成员变量私有化-将内部属性隐藏起来-一些不需要隐藏的属性提供公共的方法给外部访问" class="headerlink" title="封装:封装是指将类中的成员变量私有化,将内部属性隐藏起来,一些不需要隐藏的属性提供公共的方法给外部访问,"></a>封装:封装是指将类中的成员变量私有化,将内部属性隐藏起来,一些不需要隐藏的属性提供公共的方法给外部访问,</h5><h5 id="继承-继承是当前类中的属性以及方法不能满足使用的需求时-我们便通过继承来获取这个类的所有属性-并在其基础上对其进行扩展"><a href="#继承-继承是当前类中的属性以及方法不能满足使用的需求时-我们便通过继承来获取这个类的所有属性-并在其基础上对其进行扩展" class="headerlink" title="继承:继承是当前类中的属性以及方法不能满足使用的需求时,我们便通过继承来获取这个类的所有属性,并在其基础上对其进行扩展"></a>继承:继承是当前类中的属性以及方法不能满足使用的需求时,我们便通过继承来获取这个类的所有属性,并在其基础上对其进行扩展</h5><h5 id="多态-多态是指程序在编译和运行时表现出不同的形态-意义在于屏蔽子类差异"><a href="#多态-多态是指程序在编译和运行时表现出不同的形态-意义在于屏蔽子类差异" class="headerlink" title="多态:多态是指程序在编译和运行时表现出不同的形态,意义在于屏蔽子类差异"></a>多态:多态是指程序在编译和运行时表现出不同的形态,意义在于屏蔽子类差异</h5><h4 id="9-接口和抽象类的区别"><a href="#9-接口和抽象类的区别" class="headerlink" title="9.接口和抽象类的区别"></a>9.接口和抽象类的区别</h4><h5 id="在java8之前接口中只有抽象方法-在java8之后引入了默认方法和静态方法"><a href="#在java8之前接口中只有抽象方法-在java8之后引入了默认方法和静态方法" class="headerlink" title="在java8之前接口中只有抽象方法,在java8之后引入了默认方法和静态方法"></a>在java8之前接口中只有抽象方法,在java8之后引入了默认方法和静态方法</h5><h5 id="抽象类除了拥有抽象方法以外还拥有普通类中的所有成员-虽然抽象类中有构造方法-但是抽象类不能被实例化"><a href="#抽象类除了拥有抽象方法以外还拥有普通类中的所有成员-虽然抽象类中有构造方法-但是抽象类不能被实例化" class="headerlink" title="抽象类除了拥有抽象方法以外还拥有普通类中的所有成员,虽然抽象类中有构造方法,但是抽象类不能被实例化"></a>抽象类除了拥有抽象方法以外还拥有普通类中的所有成员,虽然抽象类中有构造方法,但是抽象类不能被实例化</h5><h4 id="10-Equals和-的区别"><a href="#10-Equals和-的区别" class="headerlink" title="10.Equals和==的区别"></a>10.Equals和==的区别</h4><h5 id="常用-来判断基本数据类型是否相等-equal是Object类中提供的一个方法-需要通过对象来调用-如果没有重写Equals-那么底层还是调用的-来判断两个值-地址值-一般会根据需求来重写Equals方法来达到想要的结果-如String中的equals"><a href="#常用-来判断基本数据类型是否相等-equal是Object类中提供的一个方法-需要通过对象来调用-如果没有重写Equals-那么底层还是调用的-来判断两个值-地址值-一般会根据需求来重写Equals方法来达到想要的结果-如String中的equals" class="headerlink" title="常用==来判断基本数据类型是否相等,equal是Object类中提供的一个方法,需要通过对象来调用,如果没有重写Equals,那么底层还是调用的==来判断两个值(地址值),一般会根据需求来重写Equals方法来达到想要的结果,如String中的equals"></a>常用==来判断基本数据类型是否相等,equal是Object类中提供的一个方法,需要通过对象来调用,如果没有重写Equals,那么底层还是调用的==来判断两个值(地址值),一般会根据需求来重写Equals方法来达到想要的结果,如String中的equals</h5><h5 id="Object中对比当前对象与传入的对象是否相等"><a href="#Object中对比当前对象与传入的对象是否相等" class="headerlink" title="Object中对比当前对象与传入的对象是否相等"></a>Object中对比当前对象与传入的对象是否相等</h5><p><img src="https://cdn.jsdelivr.net/gh/1042004021/Imgs/Pictures/image-20210610152343742.png" alt="image-20210610152343742"></p>
-<h5 id="String中对比对象中的字符串是否相等"><a href="#String中对比对象中的字符串是否相等" class="headerlink" title="String中对比对象中的字符串是否相等"></a>String中对比对象中的字符串是否相等</h5><p><img src="https://cdn.jsdelivr.net/gh/1042004021/Imgs/Pictures/image-20210610152436666.png" alt="image-20210610152436666"></p>
-<h4 id="11-int-和-Integer的区别"><a href="#11-int-和-Integer的区别" class="headerlink" title="11.int 和 Integer的区别"></a>11.int 和 Integer的区别</h4><h5 id="int是java的基本数据类型-Integer是int的包装类-更符合java的面向对象的思想-且Integer中提供了大量的方法-int的默认值是0-Integer的默认值是null"><a href="#int是java的基本数据类型-Integer是int的包装类-更符合java的面向对象的思想-且Integer中提供了大量的方法-int的默认值是0-Integer的默认值是null" class="headerlink" title="int是java的基本数据类型,Integer是int的包装类,更符合java的面向对象的思想,且Integer中提供了大量的方法,int的默认值是0,Integer的默认值是null"></a>int是java的基本数据类型,Integer是int的包装类,更符合java的面向对象的思想,且Integer中提供了大量的方法,int的默认值是0,Integer的默认值是null</h5><h4 id="12-说一下多表JOIN查询，完整查询SQ中的关键字的定义顺序（SELECT-FROM-JOIN等关键字的编写顺序）"><a href="#12-说一下多表JOIN查询，完整查询SQ中的关键字的定义顺序（SELECT-FROM-JOIN等关键字的编写顺序）" class="headerlink" title="12.说一下多表JOIN查询，完整查询SQ中的关键字的定义顺序（SELECT ,FROM JOIN等关键字的编写顺序）"></a>12.说一下多表JOIN查询，完整查询SQ中的关键字的定义顺序（SELECT ,FROM JOIN等关键字的编写顺序）</h4><h5 id="select-gt-from-gt-join-gt-on-gt-where-gt-group-by-gt-having-gt-order-by-gt-limit"><a href="#select-gt-from-gt-join-gt-on-gt-where-gt-group-by-gt-having-gt-order-by-gt-limit" class="headerlink" title="select -&gt;from -&gt;join -&gt;on -&gt;where -&gt;group by -&gt;having -&gt;order by -&gt;limit"></a>select -&gt;from -&gt;join -&gt;on -&gt;where -&gt;group by -&gt;having -&gt;order by -&gt;limit</h5><h4 id="13-说一下一个完整的多表JOIN查询的SQL的关键字的执行顺序（SELECT-FROM-JOIN等关键字的执行顺序）"><a href="#13-说一下一个完整的多表JOIN查询的SQL的关键字的执行顺序（SELECT-FROM-JOIN等关键字的执行顺序）" class="headerlink" title="13.说一下一个完整的多表JOIN查询的SQL的关键字的执行顺序（SELECT ,FROM JOIN等关键字的执行顺序）"></a>13.说一下一个完整的多表JOIN查询的SQL的关键字的执行顺序（SELECT ,FROM JOIN等关键字的执行顺序）</h4><h5 id="form-gt-join-gt-on-gt-where-gt-group-by-gt-having-gt-select-gt-order-by-gt-limit"><a href="#form-gt-join-gt-on-gt-where-gt-group-by-gt-having-gt-select-gt-order-by-gt-limit" class="headerlink" title="form -&gt;join -&gt;on -&gt;where -&gt;group by -&gt;having -&gt;select -&gt;order by -&gt;limit"></a>form -&gt;join -&gt;on -&gt;where -&gt;group by -&gt;having -&gt;select -&gt;order by -&gt;limit</h5><h4 id="14-MyBatis结果集映射，如果是单个关联对象用什么映射-如果是一个集合的查询用什么映射"><a href="#14-MyBatis结果集映射，如果是单个关联对象用什么映射-如果是一个集合的查询用什么映射" class="headerlink" title="14.MyBatis结果集映射，如果是单个关联对象用什么映射   如果是一个集合的查询用什么映射"></a>14.MyBatis结果集映射，如果是单个关联对象用什么映射   如果是一个集合的查询用什么映射</h4><h5 id="在数据库中数据涉及到多表时-我们的domain中的属性就要加上关联数据的对象"><a href="#在数据库中数据涉及到多表时-我们的domain中的属性就要加上关联数据的对象" class="headerlink" title="在数据库中数据涉及到多表时,我们的domain中的属性就要加上关联数据的对象"></a>在数据库中数据涉及到多表时,我们的domain中的属性就要加上关联数据的对象</h5><h5 id="在Mybatis中我们在mapper-xml中就不能用resultType作为返回类型"><a href="#在Mybatis中我们在mapper-xml中就不能用resultType作为返回类型" class="headerlink" title="在Mybatis中我们在mapper.xml中就不能用resultType作为返回类型"></a>在Mybatis中我们在mapper.xml中就不能用resultType作为返回类型</h5><h5 id="而是使用resultMap用来映射返回的数据-而在关联的对象中又涉及到查询的关联结果是单个对象还是对象的集合"><a href="#而是使用resultMap用来映射返回的数据-而在关联的对象中又涉及到查询的关联结果是单个对象还是对象的集合" class="headerlink" title="而是使用resultMap用来映射返回的数据,而在关联的对象中又涉及到查询的关联结果是单个对象还是对象的集合"></a>而是使用resultMap用来映射返回的数据,而在关联的对象中又涉及到查询的关联结果是单个对象还是对象的集合</h5><ul>
+<h4 id="4-直接调用线程的start方法和run方法有什么区别"><a href="#4-直接调用线程的start方法和run方法有什么区别" class="headerlink" title="4.直接调用线程的start方法和run方法有什么区别"></a>4.直接调用线程的start方法和run方法有什么区别</h4><p>调用start方法是创建一个新线程,让它拥有获取cpu资源的能力</p>
+<p>直接调用run方法不会创建新的线程,只是调用run方法</p>
+<h4 id="5-项目开发流程"><a href="#5-项目开发流程" class="headerlink" title="5.项目开发流程"></a>5.项目开发流程</h4><p>项目准备</p>
+<p>需求分析</p>
+<p>系统分析</p>
+<p>编写代码</p>
+<p>测试</p>
+<p>维护</p>
+<h4 id="6-maven的打包和安装用什么命令"><a href="#6-maven的打包和安装用什么命令" class="headerlink" title="6.maven的打包和安装用什么命令"></a>6.maven的打包和安装用什么命令</h4><p>mvn packge:打包</p>
+<p>mvn install:安装到仓库</p>
+<h4 id="7-ArrayList和vector区别"><a href="#7-ArrayList和vector区别" class="headerlink" title="7.ArrayList和vector区别"></a>7.ArrayList和vector区别</h4><p>ArrayList和vector都是基于数组的集合,而vector是线程安全的,底层方法中有synchronize修饰,ArrayList则是不保证线程安全</p>
+<p>在扩容方面二者也有区别,ArrayList添加数据当容量不足时自动扩容到当前容量的1.5倍,而vector则是扩容到当前容量的2倍</p>
+<h4 id="8-说一下面向对象的几大特征"><a href="#8-说一下面向对象的几大特征" class="headerlink" title="8.说一下面向对象的几大特征"></a>8.说一下面向对象的几大特征</h4><p>封装:封装是指将类中的成员变量私有化,将内部属性隐藏起来,一些不需要隐藏的属性提供公共的方法给外部访问,</p>
+<p>继承:继承是当前类中的属性以及方法不能满足使用的需求时,我们便通过继承来获取这个类的所有属性,并在其基础上对其进行扩展</p>
+<p>多态:多态是指程序在编译和运行时表现出不同的形态,意义在于屏蔽子类差异</p>
+<h4 id="9-接口和抽象类的区别"><a href="#9-接口和抽象类的区别" class="headerlink" title="9.接口和抽象类的区别"></a>9.接口和抽象类的区别</h4><p>在java8之前接口中只有抽象方法,在java8之后引入了默认方法和静态方法</p>
+<p>抽象类除了拥有抽象方法以外还拥有普通类中的所有成员,虽然抽象类中有构造方法,但是抽象类不能被实例化</p>
+<h4 id="10-Equals和-的区别"><a href="#10-Equals和-的区别" class="headerlink" title="10.Equals和==的区别"></a>10.Equals和==的区别</h4><p>常用==来判断基本数据类型是否相等,equal是Object类中提供的一个方法,需要通过对象来调用,如果没有重写Equals,那么底层还是调用的==来判断两个值(地址值),一般会根据需求来重写Equals方法来达到想要的结果,如String中的equals</p>
+<p>Object中对比当前对象与传入的对象是否相等</p>
+<p><img src="https://cdn.jsdelivr.net/gh/1042004021/Imgs/Pictures/image-20210610152343742.png" alt="image-20210610152343742"></p>
+<p>String中对比对象中的字符串是否相等</p>
+<p><img src="https://cdn.jsdelivr.net/gh/1042004021/Imgs/Pictures/image-20210610152436666.png" alt="image-20210610152436666"></p>
+<h4 id="11-int-和-Integer的区别"><a href="#11-int-和-Integer的区别" class="headerlink" title="11.int 和 Integer的区别"></a>11.int 和 Integer的区别</h4><p>int是java的基本数据类型,Integer是int的包装类,更符合java的面向对象的思想,且Integer中提供了大量的方法,int的默认值是0,Integer的默认值是null</p>
+<h4 id="12-说一下多表JOIN查询，完整查询SQ中的关键字的定义顺序（SELECT-FROM-JOIN等关键字的编写顺序）"><a href="#12-说一下多表JOIN查询，完整查询SQ中的关键字的定义顺序（SELECT-FROM-JOIN等关键字的编写顺序）" class="headerlink" title="12.说一下多表JOIN查询，完整查询SQ中的关键字的定义顺序（SELECT ,FROM JOIN等关键字的编写顺序）"></a>12.说一下多表JOIN查询，完整查询SQ中的关键字的定义顺序（SELECT ,FROM JOIN等关键字的编写顺序）</h4><p>select -&gt;from -&gt;join -&gt;on -&gt;where -&gt;group by -&gt;having -&gt;order by -&gt;limit</p>
+<h4 id="13-说一下一个完整的多表JOIN查询的SQL的关键字的执行顺序（SELECT-FROM-JOIN等关键字的执行顺序）"><a href="#13-说一下一个完整的多表JOIN查询的SQL的关键字的执行顺序（SELECT-FROM-JOIN等关键字的执行顺序）" class="headerlink" title="13.说一下一个完整的多表JOIN查询的SQL的关键字的执行顺序（SELECT ,FROM JOIN等关键字的执行顺序）"></a>13.说一下一个完整的多表JOIN查询的SQL的关键字的执行顺序（SELECT ,FROM JOIN等关键字的执行顺序）</h4><p>form -&gt;join -&gt;on -&gt;where -&gt;group by -&gt;having -&gt;select -&gt;order by -&gt;limit</p>
+<h4 id="14-MyBatis结果集映射，如果是单个关联对象用什么映射-如果是一个集合的查询用什么映射"><a href="#14-MyBatis结果集映射，如果是单个关联对象用什么映射-如果是一个集合的查询用什么映射" class="headerlink" title="14.MyBatis结果集映射，如果是单个关联对象用什么映射   如果是一个集合的查询用什么映射"></a>14.MyBatis结果集映射，如果是单个关联对象用什么映射   如果是一个集合的查询用什么映射</h4><p>在数据库中数据涉及到多表时,我们的domain中的属性就要加上关联数据的对象</p>
+<p>在Mybatis中我们在mapper.xml中就不能用resultType作为返回类型</p>
+<p>而是使用resultMap用来映射返回的数据,而在关联的对象中又涉及到查询的关联结果是单个对象还是对象的集合</p>
+<ul>
 <li><h4 id="关联对象为单个对象"><a href="#关联对象为单个对象" class="headerlink" title="关联对象为单个对象:"></a>关联对象为单个对象:</h4></li>
 </ul>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Data</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> class <span class="title">Student</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">private</span> Long id;</span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line">    <span class="keyword">private</span> Integer age;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">boolean</span> sex;</span><br><span class="line">    <span class="comment">//关联对象为单个对象</span></span><br><span class="line">    <span class="keyword">private</span> Teacher teacher;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -95,45 +129,65 @@
 
 
 <h4 id="总结-关联对象为单个对象时使用association标签用来映射关联的对象-标签中映射类型的属性为javaType-而关联对象为对象的集合时使用collection标签来映射对象-映射对象的属性为ofType"><a href="#总结-关联对象为单个对象时使用association标签用来映射关联的对象-标签中映射类型的属性为javaType-而关联对象为对象的集合时使用collection标签来映射对象-映射对象的属性为ofType" class="headerlink" title="总结:关联对象为单个对象时使用association标签用来映射关联的对象,标签中映射类型的属性为javaType,而关联对象为对象的集合时使用collection标签来映射对象,映射对象的属性为ofType"></a><font color="red">总结:关联对象为单个对象时使用association标签用来映射关联的对象,标签中映射类型的属性为javaType,而关联对象为对象的集合时使用collection标签来映射对象,映射对象的属性为ofType</font></h4><h4 id="15-多表查询，使用JOIN查询和额外SQL方式查询有什么区别，和优缺点"><a href="#15-多表查询，使用JOIN查询和额外SQL方式查询有什么区别，和优缺点" class="headerlink" title="15.多表查询，使用JOIN查询和额外SQL方式查询有什么区别，和优缺点"></a>15.多表查询，使用JOIN查询和额外SQL方式查询有什么区别，和优缺点</h4><ul>
-<li><h5 id="JOIN方式-在查询的数据的结构确定的情况以及结构层级较少时推荐使用这种方式-使用这种方式查询数据只需要向数据库发送一条sql-当查询数据的层级较多或层数不确定时join的次数太多-或者根本就不确定join的次数"><a href="#JOIN方式-在查询的数据的结构确定的情况以及结构层级较少时推荐使用这种方式-使用这种方式查询数据只需要向数据库发送一条sql-当查询数据的层级较多或层数不确定时join的次数太多-或者根本就不确定join的次数" class="headerlink" title="JOIN方式:在查询的数据的结构确定的情况以及结构层级较少时推荐使用这种方式,使用这种方式查询数据只需要向数据库发送一条sql,当查询数据的层级较多或层数不确定时join的次数太多,或者根本就不确定join的次数"></a>JOIN方式:在查询的数据的结构确定的情况以及结构层级较少时推荐使用这种方式,使用这种方式查询数据只需要向数据库发送一条sql,当查询数据的层级较多或层数不确定时join的次数太多,或者根本就不确定join的次数</h5></li>
-<li><h5 id="额外发送sql方式-查询的数据层级多或者不确定时使用这种方式-这种方式会将第一条sql查询到的数据作为参数传入到额外的sql作为参数进行查询-这样就能避免层级不确定的情况"><a href="#额外发送sql方式-查询的数据层级多或者不确定时使用这种方式-这种方式会将第一条sql查询到的数据作为参数传入到额外的sql作为参数进行查询-这样就能避免层级不确定的情况" class="headerlink" title="额外发送sql方式:查询的数据层级多或者不确定时使用这种方式,这种方式会将第一条sql查询到的数据作为参数传入到额外的sql作为参数进行查询,这样就能避免层级不确定的情况"></a>额外发送sql方式:查询的数据层级多或者不确定时使用这种方式,这种方式会将第一条sql查询到的数据作为参数传入到额外的sql作为参数进行查询,这样就能避免层级不确定的情况</h5></li>
+<li><p>JOIN方式:在查询的数据的结构确定的情况以及结构层级较少时推荐使用这种方式,使用这种方式查询数据只需要向数据库发送一条sql,当查询数据的层级较多或层数不确定时join的次数太多,或者根本就不确定join的次数</p>
+</li>
+<li><p>额外发送sql方式:查询的数据层级多或者不确定时使用这种方式,这种方式会将第一条sql查询到的数据作为参数传入到额外的sql作为参数进行查询,这样就能避免层级不确定的情况</p>
+</li>
 </ul>
 <h4 id="16-Mybatis中-取值和-取值的区别"><a href="#16-Mybatis中-取值和-取值的区别" class="headerlink" title="16.Mybatis中 ${}取值和#{}取值的区别"></a>16.Mybatis中 ${}取值和#{}取值的区别</h4><ul>
-<li><h5 id="不能防止sql注入-底层使用statement-采用拼接的方式"><a href="#不能防止sql注入-底层使用statement-采用拼接的方式" class="headerlink" title="${}:不能防止sql注入,底层使用statement,采用拼接的方式"></a>${}:不能防止sql注入,底层使用statement,采用拼接的方式</h5></li>
-<li><h5 id="使用预编译队形-会被编译为-占位-可以防止sql注入-但是参数涉及到表结构字段只能使用-取值"><a href="#使用预编译队形-会被编译为-占位-可以防止sql注入-但是参数涉及到表结构字段只能使用-取值" class="headerlink" title="#{}:使用预编译队形,#{}会被编译为?占位,可以防止sql注入,但是参数涉及到表结构字段只能使用${}取值"></a>#{}:使用预编译队形,#{}会被编译为?占位,可以防止sql注入,但是参数涉及到表结构字段只能使用${}取值</h5></li>
+<li><p>${}:不能防止sql注入,底层使用statement,采用拼接的方式</p>
+</li>
+<li><p>#{}:使用预编译队形,#{}会被编译为?占位,可以防止sql注入,但是参数涉及到表结构字段只能使用${}取值</p>
+</li>
 </ul>
 <h4 id="17-Mybatis关联查询，延迟加载和饥饿加载的区别"><a href="#17-Mybatis关联查询，延迟加载和饥饿加载的区别" class="headerlink" title="17.Mybatis关联查询，延迟加载和饥饿加载的区别"></a>17.Mybatis关联查询，延迟加载和饥饿加载的区别</h4><ul>
-<li><h5 id="延迟加载-sql关联查询时不会即时把关联对象的数据查询出来-而是当使用关联对象时才进行查询"><a href="#延迟加载-sql关联查询时不会即时把关联对象的数据查询出来-而是当使用关联对象时才进行查询" class="headerlink" title="延迟加载:sql关联查询时不会即时把关联对象的数据查询出来,而是当使用关联对象时才进行查询"></a>延迟加载:sql关联查询时不会即时把关联对象的数据查询出来,而是当使用关联对象时才进行查询</h5></li>
-<li><h5 id="饥饿加载-sql关联查询时会直接把关联对象的数据查询出来存到关联对象中-不管使不使用"><a href="#饥饿加载-sql关联查询时会直接把关联对象的数据查询出来存到关联对象中-不管使不使用" class="headerlink" title="饥饿加载:sql关联查询时会直接把关联对象的数据查询出来存到关联对象中,不管使不使用"></a>饥饿加载:sql关联查询时会直接把关联对象的数据查询出来存到关联对象中,不管使不使用</h5></li>
+<li><p>延迟加载:sql关联查询时不会即时把关联对象的数据查询出来,而是当使用关联对象时才进行查询</p>
+</li>
+<li><p>饥饿加载:sql关联查询时会直接把关联对象的数据查询出来存到关联对象中,不管使不使用</p>
+</li>
 </ul>
-<h4 id="18-Mybateis一级缓存和二级缓存的区别"><a href="#18-Mybateis一级缓存和二级缓存的区别" class="headerlink" title="18.Mybateis一级缓存和二级缓存的区别"></a>18.Mybateis一级缓存和二级缓存的区别</h4><h5 id="缓存是指将数据存储起来-当用户在特定条件下获取数据时-不用去数据库查询-而是从缓存中调用数据"><a href="#缓存是指将数据存储起来-当用户在特定条件下获取数据时-不用去数据库查询-而是从缓存中调用数据" class="headerlink" title="缓存是指将数据存储起来,当用户在特定条件下获取数据时,不用去数据库查询,而是从缓存中调用数据"></a>缓存是指将数据存储起来,当用户在特定条件下获取数据时,不用去数据库查询,而是从缓存中调用数据</h5><ul>
-<li><h5 id="Mybatis一级缓存-一级缓存的作用域是SqlSession-当使用同一个sqlSession发送同一条sql时命中-在sqlSession销毁时清除缓存-sqlSession调用close-方法时销毁"><a href="#Mybatis一级缓存-一级缓存的作用域是SqlSession-当使用同一个sqlSession发送同一条sql时命中-在sqlSession销毁时清除缓存-sqlSession调用close-方法时销毁" class="headerlink" title="Mybatis一级缓存:一级缓存的作用域是SqlSession,当使用同一个sqlSession发送同一条sql时命中,在sqlSession销毁时清除缓存,sqlSession调用close()方法时销毁"></a>Mybatis一级缓存:一级缓存的作用域是SqlSession,当使用同一个sqlSession发送同一条sql时命中,在sqlSession销毁时清除缓存,sqlSession调用close()方法时销毁</h5></li>
-<li><h5 id="Mybatis二级缓存-二级缓存的作用域是SqlSessionFactory-当使用同一个SqlSessionFactory发送相同的sql时命中-应在数据库执行添加-修改-删除后清除缓存"><a href="#Mybatis二级缓存-二级缓存的作用域是SqlSessionFactory-当使用同一个SqlSessionFactory发送相同的sql时命中-应在数据库执行添加-修改-删除后清除缓存" class="headerlink" title="Mybatis二级缓存:二级缓存的作用域是SqlSessionFactory,当使用同一个SqlSessionFactory发送相同的sql时命中,应在数据库执行添加,修改,删除后清除缓存"></a>Mybatis二级缓存:二级缓存的作用域是SqlSessionFactory,当使用同一个SqlSessionFactory发送相同的sql时命中,应在数据库执行添加,修改,删除后清除缓存</h5></li>
+<h4 id="18-Mybateis一级缓存和二级缓存的区别"><a href="#18-Mybateis一级缓存和二级缓存的区别" class="headerlink" title="18.Mybateis一级缓存和二级缓存的区别"></a>18.Mybateis一级缓存和二级缓存的区别</h4><p>缓存是指将数据存储起来,当用户在特定条件下获取数据时,不用去数据库查询,而是从缓存中调用数据</p>
+<ul>
+<li><p>Mybatis一级缓存:一级缓存的作用域是SqlSession,当使用同一个sqlSession发送同一条sql时命中,在sqlSession销毁时清除缓存,sqlSession调用close()方法时销毁</p>
+</li>
+<li><p>Mybatis二级缓存:二级缓存的作用域是SqlSessionFactory,当使用同一个SqlSessionFactory发送相同的sql时命中,应在数据库执行添加,修改,删除后清除缓存</p>
+</li>
 </ul>
 <h4 id="19-Mybatis的Mapper接口没有实现类为什么可以-Autowire直接注入"><a href="#19-Mybatis的Mapper接口没有实现类为什么可以-Autowire直接注入" class="headerlink" title="19.Mybatis的Mapper接口没有实现类为什么可以@Autowire直接注入"></a>19.Mybatis的Mapper接口没有实现类为什么可以@Autowire直接注入</h4><ul>
-<li><h5 id="因为Mapper接口采用动态代理-当程序运行时调用Mapper的方法时-spring底层会创建mapper的代理对象-实际上我们调用的方法是代理对象的方法"><a href="#因为Mapper接口采用动态代理-当程序运行时调用Mapper的方法时-spring底层会创建mapper的代理对象-实际上我们调用的方法是代理对象的方法" class="headerlink" title="因为Mapper接口采用动态代理,当程序运行时调用Mapper的方法时,spring底层会创建mapper的代理对象,实际上我们调用的方法是代理对象的方法"></a>因为Mapper接口采用动态代理,当程序运行时调用Mapper的方法时,spring底层会创建mapper的代理对象,<strong>实际上我们调用的方法是代理对象的方法</strong></h5></li>
+<li>因为Mapper接口采用动态代理,当程序运行时调用Mapper的方法时,spring底层会创建mapper的代理对象,<strong>实际上我们调用的方法是代理对象的方法</strong></li>
 </ul>
 <h4 id="20-说一下你对IOC的理解"><a href="#20-说一下你对IOC的理解" class="headerlink" title="20.说一下你对IOC的理解"></a>20.说一下你对IOC的理解</h4><ul>
-<li><h5 id="IOC-inversion-of-control意为控制反转-以前我们通过new的方式创建对象-在spring中创建对象不需要我们手动去new-而是通过spring来创建并管理-控制权发生了反转"><a href="#IOC-inversion-of-control意为控制反转-以前我们通过new的方式创建对象-在spring中创建对象不需要我们手动去new-而是通过spring来创建并管理-控制权发生了反转" class="headerlink" title="IOC:inversion of control意为控制反转,以前我们通过new的方式创建对象,在spring中创建对象不需要我们手动去new,而是通过spring来创建并管理,控制权发生了反转"></a>IOC:inversion of control意为控制反转,以前我们通过new的方式创建对象,在spring中创建对象不需要我们手动去new,而是通过spring来创建并管理,控制权发生了反转</h5></li>
+<li>IOC:inversion of control意为控制反转,以前我们通过new的方式创建对象,在spring中创建对象不需要我们手动去new,而是通过spring来创建并管理,控制权发生了反转</li>
 </ul>
 <h4 id="21-说一下会对AOP的理解，AOP的使用场景，是什么，AOP的实现原理是什么"><a href="#21-说一下会对AOP的理解，AOP的使用场景，是什么，AOP的实现原理是什么" class="headerlink" title="21.说一下会对AOP的理解，AOP的使用场景，是什么，AOP的实现原理是什么"></a>21.说一下会对AOP的理解，AOP的使用场景，是什么，AOP的实现原理是什么</h4><ul>
-<li><h5 id="AOP-面向切面思想-面向切面是对面向对象补充-而不是要取代面向对象-面向切面的核心思想是一段代码要作用在多个方法中-使用传统的面向对象思想就会使代码很臃肿-我们将方法可以看成一个点-而多个方法就可以看成一个面-我们可以在多个方法中作用相同的代码-比如方法执行前打印日志-管理事务等等-AOP的实现原理是基于java的动态代理进行实现"><a href="#AOP-面向切面思想-面向切面是对面向对象补充-而不是要取代面向对象-面向切面的核心思想是一段代码要作用在多个方法中-使用传统的面向对象思想就会使代码很臃肿-我们将方法可以看成一个点-而多个方法就可以看成一个面-我们可以在多个方法中作用相同的代码-比如方法执行前打印日志-管理事务等等-AOP的实现原理是基于java的动态代理进行实现" class="headerlink" title="AOP:面向切面思想,面向切面是对面向对象补充,而不是要取代面向对象,面向切面的核心思想是一段代码要作用在多个方法中,使用传统的面向对象思想就会使代码很臃肿,我们将方法可以看成一个点,而多个方法就可以看成一个面,我们可以在多个方法中作用相同的代码,比如方法执行前打印日志,管理事务等等.AOP的实现原理是基于java的动态代理进行实现"></a>AOP:面向切面思想,面向切面是对面向对象补充,而不是要取代面向对象,面向切面的核心思想是一段代码要作用在多个方法中,使用传统的面向对象思想就会使代码很臃肿,我们将方法可以看成一个点,而多个方法就可以看成一个面,我们可以在多个方法中作用相同的代码,比如方法执行前打印日志,管理事务等等.AOP的实现原理是基于java的动态代理进行实现</h5></li>
+<li>AOP:面向切面思想,面向切面是对面向对象补充,而不是要取代面向对象,面向切面的核心思想是一段代码要作用在多个方法中,使用传统的面向对象思想就会使代码很臃肿,我们将方法可以看成一个点,而多个方法就可以看成一个面,我们可以在多个方法中作用相同的代码,比如方法执行前打印日志,管理事务等等.AOP的实现原理是基于java的动态代理进行实现</li>
 </ul>
 <h4 id="22-说一下切面相关的注解，分别是什么意思"><a href="#22-说一下切面相关的注解，分别是什么意思" class="headerlink" title="22.说一下切面相关的注解，分别是什么意思"></a>22.说一下切面相关的注解，分别是什么意思</h4><ul>
-<li><h5 id="aspect-定义切切面定义在类上-表明这个类中的方法作用在切面上"><a href="#aspect-定义切切面定义在类上-表明这个类中的方法作用在切面上" class="headerlink" title="@aspect:定义切切面定义在类上,表明这个类中的方法作用在切面上"></a>@aspect:定义切切面定义在类上,表明这个类中的方法作用在切面上</h5></li>
-<li><h5 id="pointCut-定义切点-参数为需要使用切面的包-包中类的方法都会应用切面"><a href="#pointCut-定义切点-参数为需要使用切面的包-包中类的方法都会应用切面" class="headerlink" title="@pointCut:定义切点,参数为需要使用切面的包,包中类的方法都会应用切面"></a>@pointCut:定义切点,参数为需要使用切面的包,包中类的方法都会应用切面</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//切点的配置 </span></span><br><span class="line"><span class="meta">@Pointcut(&quot;execution(* xx.xxx.xx.I*Service.*(..))&quot;)</span> </span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">pointcut</span><span class="params">()</span></span>&#123;&#125; </span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
-<li><h5 id="before-前置通知-使用在方法上-在原生方法执行前需要执行的方法"><a href="#before-前置通知-使用在方法上-在原生方法执行前需要执行的方法" class="headerlink" title="@before:前置通知,使用在方法上,在原生方法执行前需要执行的方法"></a>@before:前置通知,使用在方法上,在原生方法执行前需要执行的方法</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//前置通知 </span></span><br><span class="line"><span class="meta">@Before(&quot;pointcut()&quot;)</span> </span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">begin</span><span class="params">()</span></span>&#123; </span><br><span class="line">    System.out.println(<span class="string">&quot;前置通知....&quot;</span>); </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-<li><h5 id="after-后置通知-使用在方法上-在原生方法执行完后执行的方法"><a href="#after-后置通知-使用在方法上-在原生方法执行完后执行的方法" class="headerlink" title="@after:后置通知,使用在方法上,在原生方法执行完后执行的方法"></a>@after:后置通知,使用在方法上,在原生方法执行完后执行的方法</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//后置通知 </span></span><br><span class="line"><span class="meta">@AfterReturning(&quot;pointcut()&quot;)</span> </span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">commit</span><span class="params">()</span></span>&#123; </span><br><span class="line">    System.out.println(<span class="string">&quot;后置通知....&quot;</span>); </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-<li><h5 id="afterReturning-最终通知-使用在方法上-在原生方法正常结束后执行的方法"><a href="#afterReturning-最终通知-使用在方法上-在原生方法正常结束后执行的方法" class="headerlink" title="@afterReturning:最终通知 ,使用在方法上,在原生方法正常结束后执行的方法"></a>@afterReturning:最终通知 ,使用在方法上,在原生方法正常结束后执行的方法</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//最终通知 </span></span><br><span class="line"><span class="meta">@After(&quot;pointcut()&quot;)</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">close</span><span class="params">()</span></span>&#123; </span><br><span class="line">    System.out.println(<span class="string">&quot;最终通知 ....&quot;</span>); </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-<li><h5 id="AfterThrowing-异常通知-使用在方法上-在原生方法抛出异常时执行的方法"><a href="#AfterThrowing-异常通知-使用在方法上-在原生方法抛出异常时执行的方法" class="headerlink" title="@AfterThrowing:异常通知,使用在方法上,在原生方法抛出异常时执行的方法"></a>@AfterThrowing:异常通知,使用在方法上,在原生方法抛出异常时执行的方法</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//异常通知</span></span><br><span class="line"><span class="meta">@AfterThrowing(&quot;pointcut()&quot;)</span> </span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">rollback</span><span class="params">()</span></span>&#123; </span><br><span class="line">    System.out.println(<span class="string">&quot;异常通知....&quot;</span>); </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li><p>@aspect:定义切切面定义在类上,表明这个类中的方法作用在切面上</p>
+</li>
+<li><p>@pointCut:定义切点,参数为需要使用切面的包,包中类的方法都会应用切面</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//切点的配置 </span></span><br><span class="line"><span class="meta">@Pointcut(&quot;execution(* xx.xxx.xx.I*Service.*(..))&quot;)</span> </span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">pointcut</span><span class="params">()</span></span>&#123;&#125; </span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
+<li><p>@before:前置通知,使用在方法上,在原生方法执行前需要执行的方法</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//前置通知 </span></span><br><span class="line"><span class="meta">@Before(&quot;pointcut()&quot;)</span> </span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">begin</span><span class="params">()</span></span>&#123; </span><br><span class="line">    System.out.println(<span class="string">&quot;前置通知....&quot;</span>); </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li><p>@after:后置通知,使用在方法上,在原生方法执行完后执行的方法</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//后置通知 </span></span><br><span class="line"><span class="meta">@AfterReturning(&quot;pointcut()&quot;)</span> </span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">commit</span><span class="params">()</span></span>&#123; </span><br><span class="line">    System.out.println(<span class="string">&quot;后置通知....&quot;</span>); </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li><p>@afterReturning:最终通知 ,使用在方法上,在原生方法正常结束后执行的方法</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//最终通知 </span></span><br><span class="line"><span class="meta">@After(&quot;pointcut()&quot;)</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">close</span><span class="params">()</span></span>&#123; </span><br><span class="line">    System.out.println(<span class="string">&quot;最终通知 ....&quot;</span>); </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li><p>@AfterThrowing:异常通知,使用在方法上,在原生方法抛出异常时执行的方法</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//异常通知</span></span><br><span class="line"><span class="meta">@AfterThrowing(&quot;pointcut()&quot;)</span> </span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">rollback</span><span class="params">()</span></span>&#123; </span><br><span class="line">    System.out.println(<span class="string">&quot;异常通知....&quot;</span>); </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
 </ul>
 <h4 id="23-Bean的四种注册方式"><a href="#23-Bean的四种注册方式" class="headerlink" title="23.Bean的四种注册方式"></a>23.Bean的四种注册方式</h4><ul>
-<li><h5 id="xml注册-在spring配置文件中添加-lt-bean-gt"><a href="#xml注册-在spring配置文件中添加-lt-bean-gt" class="headerlink" title="xml注册,在spring配置文件中添加&lt;bean&gt;"></a>xml注册,在spring配置文件中添加<code>&lt;bean&gt;</code></h5></li>
-<li><h5 id="静态工厂注册"><a href="#静态工厂注册" class="headerlink" title="静态工厂注册"></a>静态工厂注册</h5></li>
-<li><h5 id="实例工厂注册"><a href="#实例工厂注册" class="headerlink" title="实例工厂注册"></a>实例工厂注册</h5></li>
-<li><h5 id="BeanFectory注册"><a href="#BeanFectory注册" class="headerlink" title="BeanFectory注册"></a>BeanFectory注册</h5></li>
+<li><p>xml注册,在spring配置文件中添加<code>&lt;bean&gt;</code></p>
+</li>
+<li><p>静态工厂注册</p>
+</li>
+<li><p>实例工厂注册</p>
+</li>
+<li><p>BeanFectory注册</p>
+</li>
 </ul>
-<h4 id="24-注册Bean的注解有哪些：比如-Controller"><a href="#24-注册Bean的注解有哪些：比如-Controller" class="headerlink" title="24.注册Bean的注解有哪些：比如@Controller"></a>24.注册Bean的注解有哪些：比如@Controller</h4><h5 id="Controller-RestController-Service-Repository-Component"><a href="#Controller-RestController-Service-Repository-Component" class="headerlink" title="@Controller,@RestController,@Service,@Repository,@Component"></a>@Controller,@RestController,@Service,@Repository,@Component</h5><h4 id="25-Spring的Bean被指定为prototype以及singleton有什么区别"><a href="#25-Spring的Bean被指定为prototype以及singleton有什么区别" class="headerlink" title="25.Spring的Bean被指定为prototype以及singleton有什么区别"></a>25.Spring的Bean被指定为prototype以及singleton有什么区别</h4><p>springbean创建bean有两种形式,一种是单列模式,一种是多例模式</p>
+<h4 id="24-注册Bean的注解有哪些：比如-Controller"><a href="#24-注册Bean的注解有哪些：比如-Controller" class="headerlink" title="24.注册Bean的注解有哪些：比如@Controller"></a>24.注册Bean的注解有哪些：比如@Controller</h4><p>@Controller,@RestController,@Service,@Repository,@Component</p>
+<h4 id="25-Spring的Bean被指定为prototype以及singleton有什么区别"><a href="#25-Spring的Bean被指定为prototype以及singleton有什么区别" class="headerlink" title="25.Spring的Bean被指定为prototype以及singleton有什么区别"></a>25.Spring的Bean被指定为prototype以及singleton有什么区别</h4><p>springbean创建bean有两种形式,一种是单列模式,一种是多例模式</p>
 <p>当被指定为prototype时为多例模式,当每次需要使用bean的时候,spring就创建一个新的对象</p>
 <p>当被指定为singleton时为单例模式,spring会创建一个对象放进Map中,当需要使用这个bean的时候就将map中的对象返回</p>
 <h4 id="26-BeanFactory和ApplicationContext有什么区别"><a href="#26-BeanFactory和ApplicationContext有什么区别" class="headerlink" title="26.BeanFactory和ApplicationContext有什么区别"></a>26.BeanFactory和ApplicationContext有什么区别</h4><p>BeanFactory是一个接口,定义了IOC容器的最基本形式,还定义了IOC容器应遵守的最基本形式,给具体的IOC容器的实现提供了规范，</p>
@@ -303,6 +357,184 @@
 </ul>
 <h4 id="65-使用Redis如何实现消息广播"><a href="#65-使用Redis如何实现消息广播" class="headerlink" title="65.使用Redis如何实现消息广播"></a>65.使用Redis如何实现消息广播</h4><p>订阅者通过subscribe channl订阅频道</p>
 <p>发布者通过publish channl message发布广播</p>
+<h4 id="66-微信三方登录流程讲一下"><a href="#66-微信三方登录流程讲一下" class="headerlink" title="66.微信三方登录流程讲一下"></a>66.微信三方登录流程讲一下</h4><ul>
+<li>用户发起登录请求，后台向微信拉取获取二维码的请求，将结果重定向到前端</li>
+<li>微信将授权码返回到后台，后台将授权码重定向到前端页面</li>
+<li>前端页面再将授权码发送到后台，后台通过授权码获取用户的token，通过token获取到用户的信息，通过openId去数据库查询用户是否存在，如果存在就获取平台用户信息，将用户信息保存到redis中，使用uuid作为key，将用户信息返回给前端，前端将信息保存到LocalStroge，每次发请求都将信息存放到请求头中。</li>
+<li>如果数据库中没有用户的openId，就将用户信息保存到微信表中，让用户跳转到绑定页面</li>
+<li>用户输入手机号进行绑定，如果手机号已存在，就将用户id添加到微信表中的用户信息中，如果不存在就创建一个用户信息，将id保存到微信表中的用户信息中</li>
+</ul>
+<h4 id="67-Oauth2的优势"><a href="#67-Oauth2的优势" class="headerlink" title="67.Oauth2的优势"></a>67.Oauth2的优势</h4><p>是一个安全的开放授权标准</p>
+<p>与传统的授权方式相比它不会涉及到用户的用户名和密码等账号信息</p>
+<h4 id="68-Oauth2的四种授权模式"><a href="#68-Oauth2的四种授权模式" class="headerlink" title="68.Oauth2的四种授权模式"></a>68.Oauth2的四种授权模式</h4><p>授权码模式：功能最完善，流程最严密的授权模式</p>
+<p>简化模式：去掉了获取授权码的流程。直接从前端获取token，容易被攻击</p>
+<p>用户名密码模式：使用用户名和密码登录</p>
+<p>客户端凭证模式：用户直接向客户端认证，客户端以自己的名义去第三方索取服务</p>
+<h4 id="69-讲一下什么是非对称加密，什么是数字签名，数字签名的作用是什么？"><a href="#69-讲一下什么是非对称加密，什么是数字签名，数字签名的作用是什么？" class="headerlink" title="69.讲一下什么是非对称加密，什么是数字签名，数字签名的作用是什么？"></a>69.讲一下什么是非对称加密，什么是数字签名，数字签名的作用是什么？</h4><p>非对称加密指的是加密和解密使用的是不同的密钥</p>
+<p>数字签名是指使用私钥加密，使用公钥解密，目的是用来防止数据被篡改</p>
+<h4 id="70-说说preparedStatement和Statement的区别"><a href="#70-说说preparedStatement和Statement的区别" class="headerlink" title="70.说说preparedStatement和Statement的区别"></a>70.说说preparedStatement和Statement的区别</h4><p>PreparedStatement：预编译对象，使用这个会将sql进行预编译，使用？占位，可以防止sql注入</p>
+<p>Statement：编译对象，不会预编译sql，sql语句和参数使用的是字符串拼接的模式，有sql注入的风险</p>
+<h4 id="71-为什么要使用连接池，数据库连接池的原理"><a href="#71-为什么要使用连接池，数据库连接池的原理" class="headerlink" title="71.为什么要使用连接池，数据库连接池的原理"></a>71.为什么要使用连接池，数据库连接池的原理</h4><p>如果不使用连接池那么每次操作数据库时都会创建连接，使用完之后都需要关闭连接，性能比较低，而使用数据库连接池则不需要每次都创建连接和关闭连接，而是每次使用都会从连接池中获取连接，使用完后再将连接放回到连接池，避免了每次创建连接和关闭连接带来的性能损耗。</p>
+<p>数据库连接池的原理是用数据库连接池来对连接进行管理，需要连接对象时就从连接池中获取，使用完之后就将连接池放回到连接池中</p>
+<h4 id="72-Session和cookie有什么区别"><a href="#72-Session和cookie有什么区别" class="headerlink" title="72.Session和cookie有什么区别"></a>72.Session和cookie有什么区别</h4><p>Session是基于Cookie实现的，Session是放在服务器端的，对服务器的性能有影响，但是比较安全</p>
+<p>cookie是放在浏览器端的，对服务器的性能没有影响，但是不安全，可能有被篡改的风险</p>
+<h4 id="73-请求转发和重定向的区别？"><a href="#73-请求转发和重定向的区别？" class="headerlink" title="73.请求转发和重定向的区别？"></a>73.请求转发和重定向的区别？</h4><p>请求转发：地址栏不会发生改变，多次转发为一次请求，request和response会被共享，可以访问服务器内部资源，不能访问外部资源</p>
+<p>重定向：地址栏会发生改变，重定向为多次请求，request和response不会被共享，不能访问服务器内部资源，可以访问外部资源</p>
+<h4 id="74-get和post请求的区别"><a href="#74-get和post请求的区别" class="headerlink" title="74.get和post请求的区别"></a>74.get和post请求的区别</h4><p>get：参数会拼接到url中，数据的传输大小有限制，只能发送ASCll字符，在Restful风格中用来表示获取数据</p>
+<p>post：参数放在请求体中，数据的传输大小没有限制，可以传输多种数据类型，在Restful风格中用来表示存储数据</p>
+<h4 id="75-JSP的原理"><a href="#75-JSP的原理" class="headerlink" title="75.JSP的原理"></a>75.JSP的原理</h4><p>JSP是一个模板引擎，它底层是一个Servlet，在执行时它会被编译成java文件。访问它的请求由Servlet接收，布局的页面是通过Response.getWrite.write()响应到浏览器的</p>
+<h4 id="76-Mybatis的Mapper接口为什么可以-Autowire直接注入"><a href="#76-Mybatis的Mapper接口为什么可以-Autowire直接注入" class="headerlink" title="76.Mybatis的Mapper接口为什么可以@Autowire直接注入"></a>76.Mybatis的Mapper接口为什么可以@Autowire直接注入</h4><p>Mapper之所以可以直接注入是因为Mapper使用的java的动态代理，当我们在注入Mapper时实际上注入的是Mapper的代理对象</p>
+<h4 id="77-在MyBatis如何动态修改SQL（在代码执行的过程中修改SQL）"><a href="#77-在MyBatis如何动态修改SQL（在代码执行的过程中修改SQL）" class="headerlink" title="77.在MyBatis如何动态修改SQL（在代码执行的过程中修改SQL）"></a>77.在MyBatis如何动态修改SQL（在代码执行的过程中修改SQL）</h4><p>使用Mybatis的拦截器可以做到</p>
+<h4 id="78-MyBatis的动态SQL标签有哪些？"><a href="#78-MyBatis的动态SQL标签有哪些？" class="headerlink" title="78.MyBatis的动态SQL标签有哪些？"></a>78.MyBatis的动态SQL标签有哪些？</h4><if>
+
+<p><choose>,<when>,<otherwise></p>
+<where>
+
+<foreach>
+
+<trim>
+
+
+
+<h4 id="79-Mybatis的mapper如何传递多个参数"><a href="#79-Mybatis的mapper如何传递多个参数" class="headerlink" title="79.Mybatis的mapper如何传递多个参数?"></a>79.Mybatis的mapper如何传递多个参数?</h4><p>1.使用对象或者Map</p>
+<p>2.在Mapper中的方法参数中添加@Param()为参数命名，在sql中就使用这个名字来获取</p>
+<p>3.在sql中直接使用#{param1}，#{param2}来取值，它是根据mapper中传入数据的顺序来进行匹配的</p>
+<h4 id="80-嵌套子查询和JOIN有什么区别？"><a href="#80-嵌套子查询和JOIN有什么区别？" class="headerlink" title="80.嵌套子查询和JOIN有什么区别？"></a>80.嵌套子查询和JOIN有什么区别？</h4><p>嵌套子查询指的是先查询一个表，将查询到的结果作为参数再额外发送一条sql查询其他表，嵌套查询可能有N+1问题</p>
+<p>JOIN则是直接将多个表进行联查，只发送一条sql</p>
+<h4 id="81-在ResultMap中多对一关联对象查询用什么？一对多关联查询用什么？"><a href="#81-在ResultMap中多对一关联对象查询用什么？一对多关联查询用什么？" class="headerlink" title="81.在ResultMap中多对一关联对象查询用什么？一对多关联查询用什么？"></a>81.在ResultMap中多对一关联对象查询用什么？一对多关联查询用什么？</h4><p>多对一关联查询使用association，映射类型使用javaType，一对多使用connection，映射类型使用ofType</p>
+<h4 id="82-Spring的Bean被指定为prototype以及singleton有什么区别"><a href="#82-Spring的Bean被指定为prototype以及singleton有什么区别" class="headerlink" title="82.Spring的Bean被指定为prototype以及singleton有什么区别"></a>82.Spring的Bean被指定为prototype以及singleton有什么区别</h4><p>Spring的Bean被指定为prototype表示bean不为单例，每次使用bean时会创建新的实例</p>
+<p>被指定为singleton时bean为单例，spring会将bean存储到map中，之后需要使用bean的时候直接去map中查找</p>
+<h4 id="83-Spring的Bean懒加载和非懒加载有什么区别"><a href="#83-Spring的Bean懒加载和非懒加载有什么区别" class="headerlink" title="83.Spring的Bean懒加载和非懒加载有什么区别"></a>83.Spring的Bean懒加载和非懒加载有什么区别</h4><p>bean的懒加载指的是当需要使用到bean的时候spring才会去创建bean，而非懒加载则是在spring初始化时就会去创建bean，这样对性能有影响，但是有利于提前发现错误</p>
+<h4 id="84-Spring的依赖注入方式有哪些？"><a href="#84-Spring的依赖注入方式有哪些？" class="headerlink" title="84.Spring的依赖注入方式有哪些？"></a>84.Spring的依赖注入方式有哪些？</h4><p>setter方式注入</p>
+<p>构造方法注入</p>
+<p>注解注入</p>
+<h4 id="85-说一下Sping的Bean的生命周期"><a href="#85-说一下Sping的Bean的生命周期" class="headerlink" title="85.说一下Sping的Bean的生命周期"></a>85.说一下Sping的Bean的生命周期</h4><p>bean的生命周期包括bean的实例化，属性赋值，初始化，销毁四个阶段</p>
+<p>实例化就是创建bean的实例</p>
+<p>属性赋值为bean的属性赋值</p>
+<p>初始化是在定义bean的时候指定的初始化方法，bean会在初始化阶段调用这个方法</p>
+<p>销毁也是在定义bean的时候指定的销毁方法，bean会在销毁阶段调用这个方法</p>
+<h4 id="86-SpringBoot中如何定义拦截器"><a href="#86-SpringBoot中如何定义拦截器" class="headerlink" title="86.SpringBoot中如何定义拦截器"></a>86.SpringBoot中如何定义拦截器</h4><p>1.通过实现HandlerInterceptor来定义拦截器</p>
+<p>2.通过继承已经实现了HandlerInterceptor的HandlerInterceptorAdapter来定义拦截器</p>
+<p>覆写接口的方法</p>
+<p>一般覆写preHandler做一个请求拦截</p>
+<h4 id="87-SpringMVC的执行原理"><a href="#87-SpringMVC的执行原理" class="headerlink" title="87.SpringMVC的执行原理"></a>87.SpringMVC的执行原理</h4><p>1.请求到达前端控制器由前端控制器去找处理器映射器</p>
+<p>2.处理器映射器根据url找到一个处理器</p>
+<p>3.通过处理器适配器找到处理器进行一系列的处理返回一个ModelAndView</p>
+<p>4.将ModelAndView交给视图解析器进行解析，返回一个视图</p>
+<p>5.将这个视图响应给前端</p>
+<h4 id="88-SpringMVC的Controller是单例还是多例，有没有并发安全问题，如何解决？"><a href="#88-SpringMVC的Controller是单例还是多例，有没有并发安全问题，如何解决？" class="headerlink" title="88.SpringMVC的Controller是单例还是多例，有没有并发安全问题，如何解决？"></a>88.SpringMVC的Controller是单例还是多例，有没有并发安全问题，如何解决？</h4><p>SpringMVC的Controller默认是单例的，如果使用了成员变量就会有并发安全问题</p>
+<p>解决方法:</p>
+<ul>
+<li>可以在Controller类上打上注解@scope，属性值指定为多例。</li>
+<li>可以使用ThreadLocal来存储数据</li>
+<li>不使用成员变量，使用局部变量</li>
+</ul>
+<h4 id="89-Spring-Boot有哪些优点"><a href="#89-Spring-Boot有哪些优点" class="headerlink" title="89.Spring Boot有哪些优点"></a>89.Spring Boot有哪些优点</h4><p>SpringBoot基于Spring做出了大量简化，为我们管理大量maven的依赖，内置了tomcat服务器，打包部署更简单。基于注解配置，不用再写xml</p>
+<h4 id="90-SpringBoot如何做全局异常处理"><a href="#90-SpringBoot如何做全局异常处理" class="headerlink" title="90.SpringBoot如何做全局异常处理?"></a>90.SpringBoot如何做全局异常处理?</h4><p>在类上使用@ControllerAdvice注解监听Controller</p>
+<p>在方法上使用@ExceptionHandler监听异常并进行处理</p>
+<h4 id="91-创建线程的3种方式-三种线程的区别？start-和-run-方法区别"><a href="#91-创建线程的3种方式-三种线程的区别？start-和-run-方法区别" class="headerlink" title="91.创建线程的3种方式, 三种线程的区别？start() 和 run()方法区别"></a>91.创建线程的3种方式, 三种线程的区别？start() 和 run()方法区别</h4><p>方式一：创建类集成Thread，覆写run方法，创建类的实例，调用start()方法启动线程</p>
+<p>方式二：创建类实现Runnable，覆写run方法，创建类的实例，将对象作为参数创建Thread对象，调用Thread对象的start()方法</p>
+<p>方式三：创建类实现Callable，复习call方法，创建类的实例，将对象作为参数创建FutureTask对象，将FutureTask对象作为参数创建Thread对象，调用Thread对象的run()方法启动线程，调用FutureTask对象的get方法获取线程返回值</p>
+<p>start()是创建一个线程来执行run()方法，run()则是直接调用run()方法，不会开启新的线程</p>
+<h4 id="92-Synchronized和Lock的区别"><a href="#92-Synchronized和Lock的区别" class="headerlink" title="92.Synchronized和Lock的区别"></a>92.Synchronized和Lock的区别</h4><p>Synchronized：执行锁是隐式的，使用简单，不需要我们去关心锁的开启与释放，层次是JVM上的，不可获取锁状态。</p>
+<p>Lock：面向对象，通过调用方法来获取锁和释放锁，层次是类上，可以获取锁状态</p>
+<h4 id="93-线程的生命周期-sleep-和-wait区别"><a href="#93-线程的生命周期-sleep-和-wait区别" class="headerlink" title="93.线程的生命周期,sleep 和 wait区别"></a>93.线程的生命周期,sleep 和 wait区别</h4><p>线程被创建-&gt;线程可运行状态(Runnable)-&gt;线程运行状态-&gt;线程锁状态-&gt;线程死亡</p>
+<p>sleep：当前线程休眠，会自动唤醒，不会释放锁，需要抛异常</p>
+<p>wait：不会自动唤醒，需要其他线程调用notify或则notifyAll才能唤醒，会释放锁</p>
+<h4 id="94-synchronized-锁的原理，JDK1-6之后做了什么样的优化"><a href="#94-synchronized-锁的原理，JDK1-6之后做了什么样的优化" class="headerlink" title="94.synchronized 锁的原理，JDK1.6之后做了什么样的优化?"></a>94.synchronized 锁的原理，JDK1.6之后做了什么样的优化?</h4><p>sysnchronized锁的原理JVM内置锁，通过内部对象Monitor实现，依赖于底层操作系统Mutex lock实现</p>
+<p>jdk1.6以后使用了偏向锁，轻量级锁，重量级锁</p>
+<p>偏向锁：线程并发获取一把锁的情况是很少的，一般为一个线程获取一把锁执行代码，这个线程可以重复获取当前锁，多次获取锁时并不会重复加锁，消除了锁重入的开销，结果至始至终使用锁的线程只有一个，所以偏向锁基本没有开销，性能很高</p>
+<p>轻量级锁：当锁出现线程竞争时，偏向锁会升级成轻量级锁，没有获取到锁的线程自旋</p>
+<p>重量级锁：当出现锁竞争时，没有获取到锁的线程自选超过了默认值（10）后，轻量级锁会升级为重量级锁，重量级锁是jdk5之前使用的锁，非常影响性能</p>
+<h4 id="95-乐观锁的使用场景-数据库-ES"><a href="#95-乐观锁的使用场景-数据库-ES" class="headerlink" title="95.乐观锁的使用场景(数据库,ES)"></a>95.乐观锁的使用场景(数据库,ES)</h4><p>数据库的version，ES中用来保证并发安全也是用了乐观锁。AtomicInterger</p>
+<h4 id="96-什么是CAS"><a href="#96-什么是CAS" class="headerlink" title="96.什么是CAS"></a>96.什么是CAS</h4><p>compara and swap，比较和交换，就是乐观锁的思想。</p>
+<h4 id="97-AtomicInterger怎么保证并发安全性的"><a href="#97-AtomicInterger怎么保证并发安全性的" class="headerlink" title="97.AtomicInterger怎么保证并发安全性的"></a>97.AtomicInterger怎么保证并发安全性的</h4><p>变量使用了volatile关键字来修饰，保证了内存的可见性</p>
+<p>使用了cas来保证原子性</p>
+<h4 id="98-什么是乐观锁，什么是悲观锁，什么是重入锁，什么是自旋锁，怎么是阻塞。"><a href="#98-什么是乐观锁，什么是悲观锁，什么是重入锁，什么是自旋锁，怎么是阻塞。" class="headerlink" title="98.什么是乐观锁，什么是悲观锁，什么是重入锁，什么是自旋锁，怎么是阻塞。"></a>98.什么是乐观锁，什么是悲观锁，什么是重入锁，什么是自旋锁，怎么是阻塞。</h4><p>乐观锁不会在代码中加锁，认为操作数据时不会有其他线程来修改，但是在提交修改的时候会判断数据是否被修改了</p>
+<p>悲观锁认为只要操作数据就会有其他数据来操作，直接在代码开始加锁，代码结束释放锁</p>
+<p>重入锁是指当方法获取到锁之后还可以再次获取到当前锁</p>
+<p>自旋锁是指当方法获取锁后其他方法来获取锁被阻拦了，然后它可以每隔一段时间来尝试获取锁</p>
+<p>阻塞是指当锁被其他方法获取后，后来的方法就会被阻塞，它会一直等待锁被释放，直到它获取到锁</p>
+<h4 id="99-你用过JUC中的类吗，说几个："><a href="#99-你用过JUC中的类吗，说几个：" class="headerlink" title="99.你用过JUC中的类吗，说几个："></a>99.你用过JUC中的类吗，说几个：</h4><p>Lock，ConcurrentHashMap ,AtomicInteger</p>
+<p>，</p>
+<h4 id="100-ThreadLocal的作用和原理？ThreadLocal的使用场景"><a href="#100-ThreadLocal的作用和原理？ThreadLocal的使用场景" class="headerlink" title="100.ThreadLocal的作用和原理？ThreadLocal的使用场景"></a>100.ThreadLocal的作用和原理？ThreadLocal的使用场景</h4><p>ThreadLocal可以将数据于线程进行绑定</p>
+<p>原理是当你你向ThreadLocal存储数据时，它会通过当前线程创建一个ThreadLocalMap，将当前对象作为key，将数据存储起来，当需要获取数据时，就通过当前线程得到ThreadLocalMap，然后就能得到数据</p>
+<p>RequestContextHolder用来存储当前线程的请求信息</p>
+<p>sucretyContextHolder存储登录用户的UserDetail</p>
+<h4 id="101-线程池的作用，常用的线程池有几种，分别是什么意思"><a href="#101-线程池的作用，常用的线程池有几种，分别是什么意思" class="headerlink" title="101.线程池的作用，常用的线程池有几种，分别是什么意思?"></a>101.线程池的作用，常用的线程池有几种，分别是什么意思?</h4><p>创建多个线程，放进线程池进行管理，避免频繁创建线程导致性能的浪费</p>
+<p>常用的线程池有4种：</p>
+<p>单个线程池：创建的线程池只包含一个线程</p>
+<p>固定线程池：创建一个固定大小的线程池</p>
+<p>可缓存线程池：创建一个核心线程数为0的线程池</p>
+<p>可调度线程池：创建一个可以执行定时任务的线程池</p>
+<h4 id="102-线程池的执行流程"><a href="#102-线程池的执行流程" class="headerlink" title="102.线程池的执行流程"></a>102.线程池的执行流程</h4><p>当任务进入后先由核心线程执行，当所有核心线程没有空闲时，任务进入队列排队，当队列满了后，创建临时线程进行处理，当临时线程和队列都满了后，走拒绝策略</p>
+<h4 id="103-解释一下线程池构造器的7个参数"><a href="#103-解释一下线程池构造器的7个参数" class="headerlink" title="103.解释一下线程池构造器的7个参数"></a>103.解释一下线程池构造器的7个参数</h4><p>核心线程数，最大线程数，非核心线程最大空闲时间，时间单位，阻塞队列，线程工厂，拒绝策略</p>
+<h4 id="104-EurekaClient拉取注册表-amp-心跳续约用到了什么技术来实现？"><a href="#104-EurekaClient拉取注册表-amp-心跳续约用到了什么技术来实现？" class="headerlink" title="104.EurekaClient拉取注册表&amp;心跳续约用到了什么技术来实现？"></a>104.EurekaClient拉取注册表&amp;心跳续约用到了什么技术来实现？</h4><p>使用了可调度线程池</p>
+<h4 id="105-synchronized-和-volatile-的区别是什么？"><a href="#105-synchronized-和-volatile-的区别是什么？" class="headerlink" title="105.synchronized 和 volatile 的区别是什么？"></a>105.synchronized 和 volatile 的区别是什么？</h4><p>volatile要求每次修改变量都需要从主存中读取，并且每次操作完后必须同步到主存中，synchronized是锁定代码，让其他线程阻塞</p>
+<p>volatile修饰的变量，不会被编译器指令重排序，synchronized不会限制编译器指令重排序</p>
+<p>volatile只能修饰变量，synchronized修饰方法和代码块</p>
+<p>volatile不能保证原子性，无法保证线程安全，volatile能保证原子性，也能保证线程安全</p>
+<p>volatile不会造成线程阻塞，高并发时性能高，synchronized会造成线程阻塞，高并发时性能低</p>
+<h4 id="106-数据结构有哪几种分类？"><a href="#106-数据结构有哪几种分类？" class="headerlink" title="106.数据结构有哪几种分类？"></a>106.数据结构有哪几种分类？</h4><p>1.线性结构-&gt;ArrayList，LinkedList</p>
+<p>2.树状结构-&gt;二叉树，红黑树</p>
+<p>3.图形结构</p>
+<p>4.集合</p>
+<h4 id="107-数组和链表在内存中的存储结构有什么区别？"><a href="#107-数组和链表在内存中的存储结构有什么区别？" class="headerlink" title="107.数组和链表在内存中的存储结构有什么区别？"></a>107.数组和链表在内存中的存储结构有什么区别？</h4><p>数组在内存中使用的连续的内存空间，是顺序的</p>
+<p>链表不用保证内存的连续性</p>
+<h4 id="108-说一下散列存储-Hash存储-，-什么是Hash冲突-，-有什么解决方案"><a href="#108-说一下散列存储-Hash存储-，-什么是Hash冲突-，-有什么解决方案" class="headerlink" title="108.说一下散列存储(Hash存储) ， 什么是Hash冲突 ， 有什么解决方案"></a>108.说一下散列存储(Hash存储) ， 什么是Hash冲突 ， 有什么解决方案</h4><p>hash存储是通过hash算法将要存储的数据经过计算来模于数组长度得到存储的位置，将数据存放到数组中</p>
+<p>hash冲突指的是不同的值通过hash算法计算出来的值相同，这时存储的位置就会发生冲突</p>
+<p>解决方法：</p>
+<p>1.产生hash冲突的值使用链表挂在数组上</p>
+<p>2.对冲突的值再次使用hash计算得到新的值来存储</p>
+<p>3.准备多套hash算法，产生冲突时就换其他算法进行计算</p>
+<p>4.将冲突的数据放到其他数组</p>
+<h4 id="109-举例说说时间复杂度，比如：数组，链表，循环，嵌套循环-，-2个非嵌套循环-，-在什么情况下时间复杂度是什么？"><a href="#109-举例说说时间复杂度，比如：数组，链表，循环，嵌套循环-，-2个非嵌套循环-，-在什么情况下时间复杂度是什么？" class="headerlink" title="109.举例说说时间复杂度，比如：数组，链表，循环，嵌套循环 ， 2个非嵌套循环 ， 在什么情况下时间复杂度是什么？"></a>109.举例说说时间复杂度，比如：数组，链表，循环，嵌套循环 ， 2个非嵌套循环 ， 在什么情况下时间复杂度是什么？</h4><p>时间复杂度指的是对数据进行操作所需的时间难度</p>
+<p>使用数组获取指定值的时间难度是T(1)，因为可以使用索引来直接过去</p>
+<p>使用链表来获取值的时间难度是T(n)，通过链表获取值需要遍历链表，最极端的情况需要遍历所有的数据才能获得需要的数据</p>
+<p>使用循环来获取值的时间难度是T(n)，最极端的情况需要循环完才能获得数据</p>
+<p>嵌套循环获取值的时间难度是T(n^2)，最极端的情况需要遍历完两个循环才能获得数据</p>
+<p>两个非嵌套循环获取值的是按难度是T(2n)，最极端的情况是两个循环遍历完</p>
+<h4 id="110-JDK中线性结构的集合有哪些？"><a href="#110-JDK中线性结构的集合有哪些？" class="headerlink" title="110.JDK中线性结构的集合有哪些？"></a>110.JDK中线性结构的集合有哪些？</h4><p>List，Set</p>
+<h4 id="111-你说一下树形结构和线性结构的优势？"><a href="#111-你说一下树形结构和线性结构的优势？" class="headerlink" title="111.你说一下树形结构和线性结构的优势？"></a>111.你说一下树形结构和线性结构的优势？</h4><p>树形结构存储是有序的，查询的性能很高，如果是不自动平衡的树结构极端情况可能会变成链表结构，如果是自动平衡的树形结构添加修改删除元素会涉及到树的自动平衡，性能很低，结构较复杂，不易实现</p>
+<p>线性结构的结构简单，容易实现</p>
+<h4 id="112-说一下树的分类，以及你对它们的理解（二叉查找树的优缺点，平衡树的优缺点，红黑树的优缺点，B-树的优缺点-，B-树的优缺点）平衡树-，红黑树"><a href="#112-说一下树的分类，以及你对它们的理解（二叉查找树的优缺点，平衡树的优缺点，红黑树的优缺点，B-树的优缺点-，B-树的优缺点）平衡树-，红黑树" class="headerlink" title="112.说一下树的分类，以及你对它们的理解（二叉查找树的优缺点，平衡树的优缺点，红黑树的优缺点，B-树的优缺点 ，B+树的优缺点）平衡树 ，红黑树"></a>112.说一下树的分类，以及你对它们的理解（二叉查找树的优缺点，平衡树的优缺点，红黑树的优缺点，B-树的优缺点 ，B+树的优缺点）平衡树 ，红黑树</h4><p>二叉树：只有一个根节点，每个节点可以有最多两个子节点，每个子节点只有一个兄弟节点，每个节点左边的子节点比这个节点的值小，右边的子节点比这个节点的值大</p>
+<ul>
+<li>优点：结构相较于其他树比较简单，树状结构查询数据速度快</li>
+<li>缺点：极端情况下可能会变成链表，性能变低</li>
+</ul>
+<p>平衡树：在二叉树的基础上能够自动平衡树结构，不会出现子节点的节点数差值超过1</p>
+<ul>
+<li>优点：比起二叉树不会出现链表结构，树状结构绝对平衡，查询性能极高</li>
+<li>缺点：每次添加修改删除元素后，平衡树需要自动平衡节点，保持绝对平衡，所以性能低，不适用于频繁增删改操作元素的场景</li>
+</ul>
+<p>红黑树：保证每个叶子节点到根节点中的黑节点数相同，不会连续出现两个红节点的情况</p>
+<ul>
+<li>优点：相对于平衡树提升了增删改的性能</li>
+<li>缺点：相对于平衡树降低了查询性能</li>
+</ul>
+<p>B-树：允许每个节点存放的元素大于两个，存放的元素越多数的高度越低，拥有所有二叉树的特性</p>
+<ul>
+<li>优点：减少了树状结构的高度，能够存储更多的数据</li>
+<li>缺点：不支持范围查找和排序</li>
+</ul>
+<p>B+树：在B-树的基础上对叶子节点的数据进行了维护，将所有叶子节点的数据存放到链表中</p>
+<h4 id="113-有是二叉树为什么要出现多叉"><a href="#113-有是二叉树为什么要出现多叉" class="headerlink" title="113.有是二叉树为什么要出现多叉"></a>113.有是二叉树为什么要出现多叉</h4><p>二叉树不适合用来存储大量数据，存储大量数据会让树结构变得很高，性能变低</p>
+<p>多叉树就解决了这个问题，可以用来存储大量数据</p>
+<h4 id="114-b-tree和b-tree的区别？"><a href="#114-b-tree和b-tree的区别？" class="headerlink" title="114.b-tree和b+tree的区别？"></a>114.b-tree和b+tree的区别？</h4><p>B-树是在存储的索引和值，B+树是在节点存储索引，在叶子节点存储值，且将值封装到有序链表中，方便范围查询和排序</p>
+<h4 id="115-说一下ES用到了什么数据结构？"><a href="#115-说一下ES用到了什么数据结构？" class="headerlink" title="115.说一下ES用到了什么数据结构？"></a>115.说一下ES用到了什么数据结构？</h4><p>数据索引存储结构</p>
+<h4 id="116-常见的算法了解几个？-手写一个冒泡，手写一个二分查找"><a href="#116-常见的算法了解几个？-手写一个冒泡，手写一个二分查找" class="headerlink" title="116.常见的算法了解几个？      手写一个冒泡，手写一个二分查找"></a>116.常见的算法了解几个？      手写一个冒泡，手写一个二分查找</h4><p>冒泡排序，选择排序，二分查找</p>
+<p>冒泡：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">       <span class="keyword">int</span>[] arr = <span class="keyword">new</span> <span class="keyword">int</span>[]&#123;<span class="number">1</span>,<span class="number">8</span>,<span class="number">4</span>,<span class="number">2</span>,<span class="number">5</span>,<span class="number">3</span>&#125;;</span><br><span class="line">       <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;arr.length-<span class="number">1</span>;i++)&#123;</span><br><span class="line">           <span class="keyword">boolean</span> isOver = <span class="keyword">true</span>;</span><br><span class="line">           <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;arr.length-<span class="number">1</span>-i;j++)&#123;</span><br><span class="line">               <span class="keyword">int</span> temp = arr[<span class="number">0</span>];</span><br><span class="line">               <span class="keyword">if</span>(arr[j]&gt;arr[j+<span class="number">1</span>])&#123;</span><br><span class="line">                   temp = arr[j];</span><br><span class="line">                   arr[j]=arr[j+<span class="number">1</span>];</span><br><span class="line">                   arr[j+<span class="number">1</span>]=temp;</span><br><span class="line">                   isOver = <span class="keyword">false</span>;</span><br><span class="line">               &#125;</span><br><span class="line">           &#125;</span><br><span class="line">           <span class="keyword">if</span>(isOver)&#123;</span><br><span class="line">               <span class="keyword">break</span>;</span><br><span class="line">           &#125;</span><br><span class="line">       &#125;</span><br><span class="line">       System.out.println(Arrays.toString(arr));</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+
+<p>二分查找</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String [] args)</span></span>&#123;</span><br><span class="line">    List&lt;Integer&gt; list = Arrays.asList(<span class="number">1</span>,<span class="number">3</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>);</span><br><span class="line">    <span class="keyword">int</span> start = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> over = list.size-<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">int</span> center = (start+end)/<span class="number">2</span>；</span><br><span class="line"> 	<span class="keyword">if</span>(list.get(center)==<span class="number">5</span>)&#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;这个数的索引是：&quot;</span>+center);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">while</span>(list.get(center)!=(参数))&#123;</span><br><span class="line">        <span class="keyword">if</span>(参数&gt;list.get(center))&#123;</span><br><span class="line">            start = center;</span><br><span class="line">            center = (start+over)/<span class="number">2</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(参数&lt;list.get(center))&#123;</span><br><span class="line">            over = center;</span><br><span class="line">            center = (start+over)/<span class="number">2</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(参数=list.get(center))&#123;</span><br><span class="line">            System.out.print(<span class="string">&quot;这个数的索引是：&quot;</span>+center)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h4 id="117-一个User的List集合，如何实现根据年龄排序？"><a href="#117-一个User的List集合，如何实现根据年龄排序？" class="headerlink" title="117.一个User的List集合，如何实现根据年龄排序？"></a>117.一个User的List集合，如何实现根据年龄排序？</h4><p>1.使用Collections.sort()，将User的List集合放进去，User需要实现了Comparable接口</p>
+<p>2.使用List的sort()方法，需要传入一个比较器</p>
 
             <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
             <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
@@ -324,7 +556,7 @@
         </div>
         
     <div id='gitalk-container' class="comment link"
-		data-enable='true'
+		data-enable='false'
         data-ae='true'
         data-ci='ec68226ca114a7ac4e41'
         data-cs='66e5dfaf1178feadb8c8a61192441c6a13a815eb'
@@ -343,8 +575,6 @@
     </div>
 </div>
 <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"jsonPath":"/live2dw/assets/shizuku.model.json"},"display":{"position":"right","width":300,"height":600},"mobile":{"show":false},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
-
-<script src="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
 
 
 <script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
