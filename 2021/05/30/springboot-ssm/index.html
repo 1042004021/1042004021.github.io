@@ -1,57 +1,151 @@
-
 <!DOCTYPE html>
-<html lang="en" class="loading">
+<html lang="en">
+
+<!-- Head tag -->
 <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0" />
+
+    <!--Description-->
+    
+        <meta name="description" content="在springboot中快速搭建ssm环境首先创建springboot项目在pom.xml中导入依赖123456789101112131415161718192021222324252627282930313233343536373839404142&amp;lt;dependencies&amp;gt;		&amp;lt">
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="elder">
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="springboot快速集成ssm"/>
+    
+
+    <!--Open Graph Site Name-->
+    <meta property="og:site_name" content="一个默默无闻的博客"/>
+
+    <!--Page Cover-->
+    
+        <meta property="og:image" content=""/>
+    
+
+    <!-- Title -->
+    
     <title>springboot快速集成ssm - 一个默默无闻的博客</title>
-    <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="google" content="notranslate" />
-    <meta name="keywords" content="Fechin,"> 
-    <meta name="description" content="在springboot中快速搭建ssm环境首先创建springboot项目在pom.xml中导入依赖1234567891011121314151617181920212223242526272829,"> 
-    <meta name="author" content="elder"> 
-    <link rel="alternative" href="atom.xml" title="一个默默无闻的博客" type="application/atom+xml"> 
-    <link rel="icon" href="/img/favicon.png"> 
+
+    <!-- Custom CSS -->
     
+<link rel="stylesheet" href="/css/reset.css">
+
     
-<link rel="stylesheet" href="/css/diaspora.css">
+<link rel="stylesheet" href="/css/main.css">
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="//cdn.rawgit.com/noelboss/featherlight/1.3.5/release/featherlight.min.css" type="text/css" rel="stylesheet" />
+
+    <!-- Google Analytics -->
+    
+
+
+    <!--Favicon-->
+    
 
 <meta name="generator" content="Hexo 5.4.0"></head>
 
-<body class="loading">
-    <span id="config-title" style="display:none">一个默默无闻的博客</span>
-    <div id="loader"></div>
-    <div id="single">
-    <div id="top" style="display: block;">
-    <div class="bar" style="width: 0;"></div>
-    <a class="iconfont icon-home image-icon" href="javascript:;" data-url="http://example.com"></a>
-    <div title="播放/暂停" class="iconfont icon-play"></div>
-    <h3 class="subtitle">springboot快速集成ssm</h3>
-    <div class="social">
-        <div>
-            <div class="share">
-                <a title="获取二维码" class="iconfont icon-scan" href="javascript:;"></a>
-            </div>
-            <div id="qr"></div>
-        </div>
-    </div>
-    <div class="scrollbar"></div>
-</div>
+<body>
 
-    <div class="section">
-        <div class="article">
-    <div class='main'>
-        <h1 class="title">springboot快速集成ssm</h1>
-        <div class="stuff">
-            <span>五月 30, 2021</span>
+<!-- Menu -->
+<!-- Navigation -->
+<header>
+    <div class="logo">
+        <a href="/">一个默默无闻的博客</a>
+    </div><!-- end logo -->
+
+    <div id="menu_icon"></div>
+    <nav>
+        <ul>
             
-  <ul class="post-tags-list" itemprop="keywords"><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/springboot/" rel="tag">springboot</a></li><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/ssm/" rel="tag">ssm</a></li></ul>
+            <li>
+                <a href="/">Home</a>
+            </li>
+            
+            <li>
+                <a href="/archives">Archives</a>
+            </li>
+            
+        </ul>
+    </nav><!-- end navigation menu -->
+
+    <div class="footer clearfix">
+        <ul class="social clearfix">
+            
+            
+                <li><a href="https://www.facebook.com/" class="fb" target="_blank" data-title="Facebook"></a></li>
+            
+            
+                <li><a href="https://www.behance.net/" class="behance" target="_blank" data-title="Behance"></a></li>
+            
+            
+                <li><a href="https://plus.google.com/+Pixelhint/posts" class="google" target="_blank" data-title="Google+"></a></li>
+            
+            
+                <li><a href="https://dribbble.com/pixelhint" class="dribble" target="_blank" data-title="Dribble"></a></li>
+            
+            
+            
+            
+        </ul><!-- end social -->
+
+        <div class="rights">
+            <p>Copyright © 2014 magnetic.</p>
+            <p>Template by <a target="_blank" rel="noopener" href="http://pixelhint.com/magnetic-free-html5-responsive-photography-website-template/">Pixelhint.com</a></p>
+            <p>Hexo Theme by <a target="_blank" rel="noopener" href="http://www.codeblocq.com/">Jonathan K.</a></p>
+        </div><!-- end rights -->
+    </div ><!-- end footer -->
+</header><!-- end header -->
 
 
+<!-- Main Content -->
+<section class="main clearfix">
+
+    <section class="top" style="background: url('http://placehold.it/1300x500');">
+        <div class="wrapper content_header clearfix">
+            
+
+<div class="work_nav">
+
+    <ul class="btn clearfix">
+        
+        <li><a href="/2021/06/01/interview-question-1/" class="previous" data-title="JAVA进阶面试题（高频面试题）"></a></li>
+        
+        <li><a href="/" class="grid" data-title="Portfolio"></a></li>
+        
+        <li><a href="/2021/05/25/thread/" class="next" data-title="JAVA多线程的测试中的一些心得"></a></li>
+        
+    </ul>
+
+</div><!-- end work_nav -->
+            <h1 class="title">springboot快速集成ssm</h1>
         </div>
-        <div class="content markdown">
+    </section><!-- end top -->
+
+    <section class="wrapper">
+        <div class="content">
+
+            <!-- Gallery -->
+            
+
+            <!-- Content -->
             <h4 id="在springboot中快速搭建ssm环境"><a href="#在springboot中快速搭建ssm环境" class="headerlink" title="在springboot中快速搭建ssm环境"></a>在springboot中快速搭建ssm环境</h4><h5 id="首先创建springboot项目"><a href="#首先创建springboot项目" class="headerlink" title="首先创建springboot项目"></a>首先创建springboot项目</h5><h5 id="在pom-xml中导入依赖"><a href="#在pom-xml中导入依赖" class="headerlink" title="在pom.xml中导入依赖"></a>在pom.xml中导入依赖</h5><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependencies</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-web<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"></span><br><span class="line">		<span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-test<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">scope</span>&gt;</span>test<span class="tag">&lt;/<span class="name">scope</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">exclusions</span>&gt;</span></span><br><span class="line">				<span class="tag">&lt;<span class="name">exclusion</span>&gt;</span></span><br><span class="line">					<span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.junit.vintage<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">					<span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>junit-vintage-engine<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">				<span class="tag">&lt;/<span class="name">exclusion</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;/<span class="name">exclusions</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">		<span class="comment">&lt;!-- alibaba的连接池 --&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">groupId</span>&gt;</span>com.alibaba<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>druid<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">version</span>&gt;</span>1.1.20<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">		<span class="comment">&lt;!-- mysql 数据库驱动. --&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">groupId</span>&gt;</span>mysql<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>mysql-connector-java<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">		<span class="comment">&lt;!-- mybatis整合springboot的依赖. --&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.mybatis.spring.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>mybatis-spring-boot-starter<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">version</span>&gt;</span>1.1.1<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.projectlombok<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>lombok<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.16.18<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">scope</span>&gt;</span>provided<span class="tag">&lt;/<span class="name">scope</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">dependencies</span>&gt;</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
 <h5 id="在springboot的配置文件-application-yml-中添加dataSource配置"><a href="#在springboot的配置文件-application-yml-中添加dataSource配置" class="headerlink" title="在springboot的配置文件(application.yml)中添加dataSource配置"></a>在springboot的配置文件(application.yml)中添加dataSource配置</h5><figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">spring:</span></span><br><span class="line">  <span class="attr">dataSource:</span></span><br><span class="line">    <span class="comment">#以mysql为例</span></span><br><span class="line">    <span class="string">driverClass:com.mysql.jsbc.Driver</span></span><br><span class="line">    <span class="string">username:用户名</span></span><br><span class="line">    <span class="string">password:密码</span></span><br><span class="line">    <span class="string">url:数据库连接</span></span><br><span class="line">    <span class="attr">type:</span> <span class="string">连接池类型,不写为springboot默认的连接池s</span></span><br><span class="line">    </span><br><span class="line"><span class="attr">mybatis:</span></span><br><span class="line">  <span class="string">mapper-locations:classpath:xx/xxx/xxx/*Mapper.xmls</span></span><br></pre></td></tr></table></figure>
@@ -59,116 +153,65 @@
 <h5 id="在springboot的配置类添加注解"><a href="#在springboot的配置类添加注解" class="headerlink" title="在springboot的配置类添加注解"></a>在springboot的配置类添加注解</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@MapperScan(&quot;Mapper的全限定名&quot;)</span></span><br></pre></td></tr></table></figure>
 
 <h5 id="好了-完事儿"><a href="#好了-完事儿" class="headerlink" title="好了,完事儿"></a>好了,完事儿</h5>
-            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
-            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
-                <source type="audio/mpeg" src="">
-            </audio>
+
+            <!-- Tags -->
             
-                <ul id="audio-list" style="display:none">
-                    
-                        
-                            <li title='0' data-url='http://link.hhtjim.com/163/425570952.mp3'></li>
-                        
-                    
-                        
-                            <li title='1' data-url='http://link.hhtjim.com/163/425570952.mp3'></li>
-                        
-                    
-                </ul>
-            
-        </div>
-        
-    <div id='gitalk-container' class="comment link"
-		data-enable='false'
-        data-ae='true'
-        data-ci='ec68226ca114a7ac4e41'
-        data-cs='66e5dfaf1178feadb8c8a61192441c6a13a815eb'
-        data-r='comment'
-        data-o='1042004021'
-        data-a='1042004021'
-        data-d='false'
-    >查看评论</div>
 
 
-    </div>
-    
-        <div class='side'>
-			<ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9C%A8springboot%E4%B8%AD%E5%BF%AB%E9%80%9F%E6%90%AD%E5%BB%BAssm%E7%8E%AF%E5%A2%83"><span class="toc-number">1.</span> <span class="toc-text">在springboot中快速搭建ssm环境</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E9%A6%96%E5%85%88%E5%88%9B%E5%BB%BAspringboot%E9%A1%B9%E7%9B%AE"><span class="toc-number">1.1.</span> <span class="toc-text">首先创建springboot项目</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%9C%A8pom-xml%E4%B8%AD%E5%AF%BC%E5%85%A5%E4%BE%9D%E8%B5%96"><span class="toc-number">1.2.</span> <span class="toc-text">在pom.xml中导入依赖</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%9C%A8springboot%E7%9A%84%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6-application-yml-%E4%B8%AD%E6%B7%BB%E5%8A%A0dataSource%E9%85%8D%E7%BD%AE"><span class="toc-number">1.3.</span> <span class="toc-text">在springboot的配置文件(application.yml)中添加dataSource配置</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%9C%A8springboot%E7%9A%84%E9%85%8D%E7%BD%AE%E7%B1%BB%E6%B7%BB%E5%8A%A0%E6%B3%A8%E8%A7%A3"><span class="toc-number">1.4.</span> <span class="toc-text">在springboot的配置类添加注解</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%A5%BD%E4%BA%86-%E5%AE%8C%E4%BA%8B%E5%84%BF"><span class="toc-number">1.5.</span> <span class="toc-text">好了,完事儿</span></a></li></ol></li></ol>	
-        </div>
-    
+<div class="tags">
+    <a href="/tags/springboot/">springboot</a> <a href="/tags/ssm/">ssm</a>
 </div>
 
 
-    </div>
-</div>
+
+            <!-- Comments -->
+            <div>
+                
+
+
+
+
+    <hr />
+    <h3>Comments:</h3>
+    <div id="valine"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <script src='//unpkg.com/valine@1.1.7/dist/Valine.min.js'></script>
+    <script>
+    new Valine({
+        el: '#valine' ,
+        notify:false,
+        verify:false,
+        app_id: 'ohKdNvnATs6xIpXGmi3zoR8g-gzGzoHsz',
+        app_key: 'Gt7d5LTaoWzVHvHj58eHJbwu',
+        placeholder: 'Just go go',
+        path:window.location.pathname,
+        avatar:'mm' 
+    });
+    </script>
+
+            </div>
+        </div><!-- end content -->
+    </section>
+</section><!-- end main -->
+
+<!-- After footer scripts -->
+
+<!-- jQuery -->
+
+<script src="/js/jquery.js"></script>
+
+
+<!-- Custom Code -->
+
+<script src="/js/main.js"></script>
+
+
+<!-- Gallery -->
+<script src="//cdn.rawgit.com/noelboss/featherlight/1.3.5/release/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
+<!-- Disqus Comments -->
+
+
 <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"jsonPath":"/live2dw/assets/shizuku.model.json"},"display":{"position":"right","width":300,"height":600},"mobile":{"show":false},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
-
-
-<script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
-<script src="/js/plugin.js"></script>
-<script src="/js/typed.js"></script>
-<script src="/js/diaspora.js"></script>
-
-
-<link rel="stylesheet" href="/photoswipe/photoswipe.css">
-<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
-
-
-<script src="/photoswipe/photoswipe.min.js"></script>
-<script src="/photoswipe/photoswipe-ui-default.min.js"></script>
-
-
-<!-- Root element of PhotoSwipe. Must have class pswp. -->
-<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
-    <!-- Background of PhotoSwipe. 
-         It's a separate element as animating opacity is faster than rgba(). -->
-    <div class="pswp__bg"></div>
-    <!-- Slides wrapper with overflow:hidden. -->
-    <div class="pswp__scroll-wrap">
-        <!-- Container that holds slides. 
-            PhotoSwipe keeps only 3 of them in the DOM to save memory.
-            Don't modify these 3 pswp__item elements, data is added later on. -->
-        <div class="pswp__container">
-            <div class="pswp__item"></div>
-            <div class="pswp__item"></div>
-            <div class="pswp__item"></div>
-        </div>
-        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
-        <div class="pswp__ui pswp__ui--hidden">
-            <div class="pswp__top-bar">
-                <!--  Controls are self-explanatory. Order can be changed. -->
-                <div class="pswp__counter"></div>
-                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
-                <button class="pswp__button pswp__button--share" title="Share"></button>
-                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
-                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
-                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
-                <!-- element will get class pswp__preloader--active when preloader is running -->
-                <div class="pswp__preloader">
-                    <div class="pswp__preloader__icn">
-                      <div class="pswp__preloader__cut">
-                        <div class="pswp__preloader__donut"></div>
-                      </div>
-                    </div>
-                </div>
-            </div>
-            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
-                <div class="pswp__share-tooltip"></div> 
-            </div>
-            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
-            </button>
-            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
-            </button>
-            <div class="pswp__caption">
-                <div class="pswp__caption__center"></div>
-            </div>
-        </div>
-    </div>
-</div>
-
-
-
-
-
 
 </html>
