@@ -1,0 +1,242 @@
+<head>
+<Style>
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        /*背景模糊*/
+        .bg {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            background: url("http://api.btstu.cn/sjbz/?lx=dongman") no-repeat fixed;
+            background-size: cover;
+            box-sizing: border-box;
+            z-index: 1;
+        }
+
+        .bg:after {
+            content: "";
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            left: 0;
+            top: 0;
+            /* 从父元素继承 background 属性的设置 */
+            background: inherit;
+            filter: blur(20px);
+            z-index: 2;
+        }
+
+
+        .content {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            width: 200px;
+            height: 200px;
+            text-align: center;
+            z-index: 3;
+        }
+		.img{
+			top: 22%;
+			left: 10%;
+			width: 900px;
+			position: absolute;
+			z-index: 3;
+		}
+		.div1{
+			position: absolute;
+			z-index: 3;
+		}
+		.in{
+			width: 27%;
+			height: 50px;
+			position: absolute;
+			top:100px ;
+			left: 30%;
+			z-index: 3;
+		}
+		button{
+			width: 100px;
+			position: absolute;
+			top: 100px;
+			left: 58%;
+			z-index: 3;
+		}
+		.icon{
+			position: absolute;
+			width: 18vmin;
+			height: 18vmin;
+			z-index: 3;
+			top: 10%;
+			left: 86%;
+		}
+		.icon2{
+			position: absolute;
+			width: 18vmin;
+			height: 18vmin;
+			z-index: 3;
+			top: 30%;
+			left: 86%;
+		}
+		.icon3{
+			position: absolute;
+						width: 16vmin;
+						height: 16vmin;
+						z-index: 3;
+						top: 32%;
+						left: 75%;
+		}
+		.div2{
+			position: absolute;
+			z-index: 3;
+			height: 20vmin;
+			width: 40vmin;
+			top: 50%;
+			left: 74.5%;
+			border: 10px #DDDDDD solid;
+			background: url("http://api.btstu.cn/sjbz/?lx=meizi") no-repeat; 
+			background-size: 100%;
+		}
+		.icon4{
+			position: absolute;
+						width: 15vmin;
+						height: 15vmin;
+						z-index: 3;
+						top: 73%;
+						left: 76%;
+		}
+		.icon5{
+			position: absolute;
+						width: 16vmin;
+						height: 16vmin;
+						z-index: 3;
+						top: 73%;
+						left: 85%;
+		}
+		.countdown16{
+				position: absolute;
+				z-index: 100;
+				top: 80%;
+				left: 10%;
+				width: 10%;
+		}
+		.div3{
+		z-index: 3;
+		height: 10vmin;
+		width: 40vmin;
+		top: 88%;
+		left: 74.5%;
+			position: absolute;
+		}
+    </Style>
+<link rel="stylesheet" href="css/style.css">
+
+<script src="js/jquery.min.js"></script>
+<script src="js/jquery.knob.js"></script>
+<script src="js/jquery.throttle.js"></script>
+<script src="js/jquery.classycountdown.js"></script>
+<link rel="stylesheet" type="text/css" href="css/jquery.classycountdown.css" />
+<link rel="stylesheet" type="text/css" href="css/layui.css" />
+<title>导航</title>
+</head>
+
+<body>
+    <div class="bg">
+       <img class="img" src="http://api.btstu.cn/sjbz/?lx=dongman" />
+	   <svg onclick="op91()" t="1605954586258" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="5950" width="200" height="200"><path d="M546.133333 68.266667h204.8a204.8 204.8 0 0 1 204.8 204.8v477.866666a204.8 204.8 0 0 1-204.8 204.8H546.133333V68.266667z m204.8 580.266666A85.333333 85.333333 0 1 0 750.933333 477.866667a85.333333 85.333333 0 0 0 0 170.666666zM477.866667 68.266667v887.466666H273.066667c-113.322667 0-204.8-85.333333-204.8-190.464V259.413333C68.266667 153.6 159.744 68.266667 273.066667 68.266667h204.8zM409.6 136.533333H273.066667c-76.458667 0-136.533333 55.978667-136.533334 122.197334v506.538666c0 66.218667 60.074667 122.197333 136.533334 122.197334h136.533333V136.533333zM273.066667 443.733333A85.333333 85.333333 0 1 1 273.066667 273.066667a85.333333 85.333333 0 0 1 0 170.666666z" p-id="5951" fill="#d81e06"></path></svg>
+	   <svg onclick="opbili()" id="bilibili" t="1605954822870" class="icon2" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="6729" width="200" height="200"><path d="M360.896 183.968l-90.912-88.096s-14.208-17.472 9.824-37.248c24.16-19.648 25.376-10.912 33.504-5.472s135.2 130.816 135.2 130.816h-87.616z m301.952 3.264l90.912-88.096s14.208-17.472-9.824-37.248c-24.032-19.648-25.376-10.912-33.504-5.472s-135.2 130.816-135.2 130.816h87.616zM1004 350.336c-3.264-137.984-123.168-164.192-123.168-164.192s-614.336-4.96-742.496 0C10.176 222.304 20 350.336 20 350.336s1.696 274.272-0.128 413.12c13.824 138.848 120.864 160.928 120.864 160.928s42.72 0.864 73.92 0.864c3.264 8.992 5.696 52.544 54.24 52.544 48.416 0 54.24-52.544 54.24-52.544s354.88-1.696 384.352-1.696c1.696 14.816 8.992 54.976 57.536 54.24 48.416-0.864 51.712-57.536 51.712-57.536s16.384-1.696 65.664 0C997.344 898.88 1004 764.192 1004 764.192s-1.568-275.872 0-413.856z m-98.912 439.232c0 21.728-17.248 39.456-38.464 39.456H167.2c-21.248 0-38.464-17.6-38.464-39.456V326.336c0-21.728 17.248-39.456 38.464-39.456h699.424c21.248 0 38.464 17.6 38.464 39.456v463.232zM202.4 457.152l205.344-39.456 15.52 77.184-203.648 39.456z m638.976 0l-205.344-39.456-15.648 77.184 203.776 39.456z m-418.08 191.392s45.152 81.312 95.264-26.336c48.416 105.088 101.824 27.904 101.824 27.904l30.336 19.776s-56.672 91.136-131.424 22.208c-63.232 68.928-129.728-21.952-129.728-21.952l33.728-21.6z" fill="#d81e06" p-id="6730"></path></svg>
+		<svg onclick="opyaohuo()" id="yaohuo" t="1605954883298" class="icon3" viewBox="0 0 1247 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="7113" width="200" height="200"><path d="M39.57113 120.0516h-39.571125v139.822773h39.571125v515.511038a288.854826 288.854826 0 0 0 62.141057 55.083007q-49.456712 21.188539-101.690598 38.132175v149.715554a1075.190647 1075.190647 0 0 0 141.232944-46.607591q60.709301-24.001686 117.224063-50.845298 56.471593 26.836418 118.641429 50.845298a1173.722749 1173.722749 0 0 0 141.232944 46.607591v-149.715554q-52.269859-16.943636-101.690597-38.132175a289.387238 289.387238 0 0 0 62.141056-55.083007V259.874373h39.571126V120.0516h-39.571126V0H298.028138v120.0516h-76.264351V0H39.57113v120.0516zM1049.404667 1023.964026h197.733317l-152.528702-477.378862h-129.937186l14.123294-31.074126h266.925228v-141.232944h-249.981591V169.486728l249.988786-16.950832V11.302952L550.808487 59.320714v139.822773l238.685834-16.950831v192.099827H550.808487v141.232945h223.152368l-234.45532 508.452988h206.280679l185.020193-405.345025zM258.485791 749.966359a72.580639 72.580639 0 0 1-11.295758-7.065245q-12.713123-7.050855-25.419052-15.533465V259.874373h76.264351v466.083105l-28.246589 16.943636z" p-id="7114"></path></svg>
+		<img onclick="opgirl()" id="girl" class="icon4"  src="img/girl.png"/>
+		<img onclick="ophexo()" id="hexo" class="icon5"  src="img/favicon.png"/>
+		
+		
+		<div class="div2"></div>
+		<div class="div3">
+			<div id="countdown16" class="ClassyCountdownDemo"></div>
+		</div>
+		
+	</div>
+	<input id="in" class="in" type="text" />
+	<button onclick="click1()" class="layui-btn" type="button">百度搜索</button>
+	
+<div class="wrapper">
+  <div class="face">
+    <div class="seeds">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+    <div class="quarter">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+    <div class="hands">
+      <div class="m"></div>
+      <div class="h"></div>
+      <div class="s"></div>
+    </div>
+  </div>
+</div>
+<script  src="js/script.js"></script>
+<script>
+	function click1(){
+		var r = $.now();
+		console.log(r)
+		var t = document.getElementById("in").value;
+		window.open("https://www.baidu.com/s?ie=utf-8&f=8&rsv_bp=1&tn=baidu&wd="+t)
+	}
+	function op91(){
+		window.open("https://www.91wii.com");
+	}
+	function opbili(){
+		window.open("https://www.bilibili.com");
+	}
+	function opyaohuo(){
+		window.open("https://yaohuo.me/");
+	}
+	function opgirl(){
+		window.open("http://only-elder.top/girl/");
+	}
+	function ophexo(){
+		window.open("http://only-elder.top/");
+	}
+	$(document).ready(function() {
+	$('#countdown16').ClassyCountdown({
+		
+		theme: "flat-colors-wide",
+		end: $.now() + (new Date(new Date(new Date().toLocaleDateString()).getTime()+20*60*60*1000) - $.now())/1000
+	});
+	});
+	//回车事件绑定
+    $('#in').bind('keyup', function(event) {
+        if (event.keyCode == "13") {
+            //回车执行查询
+            click1();
+        }
+    });
+</script>
+</body>
