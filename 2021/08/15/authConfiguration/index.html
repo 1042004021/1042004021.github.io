@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0" />
+
+    <!--Description-->
+    
+        <meta name="description" content="我们都知道SpringBoot让我们的开发变得更简单，以前需要配置Spring、Mybatis等等配置文件，但是在SpringBoot中就不需要再做这些配置
+有了解过的朋友应该会知道是因为SpringBoot的启动类上的@SpringBootApplication注解帮我们做了这些事，其中帮我们对配">
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="elder">
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="SpringBoot-@AutoConfiguration配置分析"/>
+    
+
+    <!--Open Graph Site Name-->
+    <meta property="og:site_name" content="一个默默无闻的博客"/>
+
+    <!--Page Cover-->
+    
+        <meta property="og:image" content=""/>
+    
+
+    <!-- Title -->
+    
+    <title>SpringBoot-@AutoConfiguration配置分析 - 一个默默无闻的博客</title>
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/reset.css">
+
+    
+<link rel="stylesheet" href="/css/main.css">
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link https://cdn.bootcdn.net/ajax/libs/featherlight/1.5.0/featherlight.gallery.min.css" type="text/css" rel="stylesheet" />
+
+    <!-- Google Analytics -->
+    
+
+
+    <!--Favicon-->
+    
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body>
+
+<!-- Menu -->
+<!-- Navigation -->
+<header>
+    <div class="logo">
+        <a href="/">一个默默无闻的博客</a>
+    </div><!-- end logo -->
+
+    <div id="menu_icon"></div>
+    <nav>
+        <ul>
+            
+            <li>
+                <a href="/">首页</a>
+            </li>
+            
+            <li>
+                <a href="/archives">归档</a>
+            </li>
+            
+            <li>
+                <a href="/girl">看妹子</a>
+            </li>
+            
+        </ul>
+    </nav><!-- end navigation menu -->
+
+    <div class="footer clearfix">
+        <ul class="social clearfix">
+            
+            
+                <li><a href="https://www.facebook.com/" class="fb" target="_blank" data-title="Facebook"></a></li>
+            
+            
+                <li><a href="https://www.behance.net/" class="behance" target="_blank" data-title="Behance"></a></li>
+            
+            
+                <li><a href="https://plus.google.com/+Pixelhint/posts" class="google" target="_blank" data-title="Google+"></a></li>
+            
+            
+                <li><a href="https://dribbble.com/pixelhint" class="dribble" target="_blank" data-title="Dribble"></a></li>
+            
+            
+            
+            
+        </ul><!-- end social -->
+
+        <div class="rights">
+            <p>Copyright © 2014 magnetic.</p>
+            <p>Template by <a target="_blank" rel="noopener" href="http://pixelhint.com/magnetic-free-html5-responsive-photography-website-template/">Pixelhint.com</a></p>
+            <p>Hexo Theme by <a target="_blank" rel="noopener" href="http://www.codeblocq.com/">Jonathan K.</a></p>
+        </div><!-- end rights -->
+    </div ><!-- end footer -->
+</header><!-- end header -->
+
+
+<!-- Main Content -->
+<section class="main clearfix">
+
+    <section class="top" style="background: url('https://cdn.jsdelivr.net/gh/1042004021/cover/pic/wallhaven-1kxdz1.jpg');">
+        <div class="wrapper content_header clearfix">
+            
+
+<div class="work_nav">
+
+    <ul class="btn clearfix">
+        
+        <li><a class="previous disabled"></a></li>
+        
+        <li><a href="/" class="grid" data-title="Portfolio"></a></li>
+        
+        <li><a href="/2021/06/01/interview-question-1/" class="next" data-title="JAVA进阶面试题（高频面试题）"></a></li>
+        
+    </ul>
+
+</div><!-- end work_nav -->
+            <h1 class="title">SpringBoot-@AutoConfiguration配置分析</h1>
+        </div>
+    </section><!-- end top -->
+
+    <section class="wrapper">
+        <div class="content">
+
+            <!-- Gallery -->
+            
+
+            <!-- Content -->
+            <p>我们都知道SpringBoot让我们的开发变得更简单，以前需要配置Spring、Mybatis等等配置文件，但是在SpringBoot中就不需要再做这些配置</p>
+<p>有了解过的朋友应该会知道是因为SpringBoot的启动类上的@SpringBootApplication注解帮我们做了这些事，其中帮我们对配置完成自动装配的注解就是@EnableAutoConfiguration，今天我们就来看看这个注解底层是怎样工作的，不了解的朋友可以看看<a target="_blank" rel="noopener" href="https://only-elder.top/2021/06/01/spring-config/">springboot中需要知道的一些配置 - 一个默默无闻的博客 (only-elder.top)</a></p>
+<p>首先我们点进注解看一下    </p>
+<p><img src="https://cdn.jsdelivr.net/gh/1042004021/cover/pic/image-20210815175424367.png" alt="image-20210815175424367"></p>
+<p>可以看到这里导入了一个自动配置导入选择器，我们点进去可以看到覆写了这个方法</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Override</span></span><br><span class="line">	<span class="comment">/**选择导入**/</span></span><br><span class="line">	<span class="keyword">public</span> String[] selectImports(AnnotationMetadata annotationMetadata) &#123;</span><br><span class="line">		<span class="keyword">if</span> (!isEnabled(annotationMetadata)) &#123;</span><br><span class="line">			<span class="keyword">return</span> NO_IMPORTS;</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">		<span class="comment">/**加载元数据，这里就在加载包中的配置文件获取元数据**/</span></span><br><span class="line">		AutoConfigurationMetadata autoConfigurationMetadata = AutoConfigurationMetadataLoader</span><br><span class="line">				.loadMetadata(<span class="keyword">this</span>.beanClassLoader);</span><br><span class="line">				</span><br><span class="line">		<span class="comment">/**获取注解的属性**/</span></span><br><span class="line">		AnnotationAttributes attributes = getAttributes(annotationMetadata);</span><br><span class="line">		</span><br><span class="line">		<span class="comment">/**通过元数据和属性来获取配置**/</span></span><br><span class="line">		List&lt;String&gt; configurations = getCandidateConfigurations(annotationMetadata,</span><br><span class="line">				attributes);</span><br><span class="line">		configurations = removeDuplicates(configurations);</span><br><span class="line">		Set&lt;String&gt; exclusions = getExclusions(annotationMetadata, attributes);</span><br><span class="line">		checkExcludedClasses(configurations, exclusions);</span><br><span class="line">		configurations.removeAll(exclusions);</span><br><span class="line">		configurations = filter(configurations, autoConfigurationMetadata);</span><br><span class="line">		fireAutoConfigurationImportEvents(configurations, exclusions);</span><br><span class="line">		<span class="keyword">return</span> StringUtils.toStringArray(configurations);</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
+
+<p>我们继续跟进，看它是怎么获取的元数据</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">protected</span> <span class="keyword">static</span> <span class="keyword">final</span> String PATH = <span class="string">&quot;META-INF/&quot;</span>+ <span class="string">&quot;spring-autoconfigure-metadata.properties&quot;</span>;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+            <!-- Tags -->
+            
+
+
+<div class="tags">
+    <a href="/tags/spring-boot/">spring-boot</a>
+</div>
+
+
+
+            <!-- Comments -->
+            <div>
+                
+
+
+
+
+    <hr />
+    <h3>Comments:</h3>
+    <div id="valine"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <script src='//unpkg.com/valine@1.1.7/dist/Valine.min.js'></script>
+    <script>
+    new Valine({
+        el: '#valine' ,
+        notify:false,
+        verify:false,
+        app_id: 'ohKdNvnATs6xIpXGmi3zoR8g-gzGzoHsz',
+        app_key: 'Gt7d5LTaoWzVHvHj58eHJbwu',
+        placeholder: 'Just go go',
+        path:window.location.pathname,
+        avatar:'mm' 
+    });
+    </script>
+
+            </div>
+        </div><!-- end content -->
+    </section>
+</section><!-- end main -->
+
+<!-- After footer scripts -->
+
+<!-- jQuery -->
+
+<script src="/js/jquery.js"></script>
+
+
+<!-- Custom Code -->
+
+<script src="/js/main.js"></script>
+
+
+<!-- Gallery -->
+<script src="https://cdn.bootcdn.net/ajax/libs/featherlight/1.5.0/featherlight.gallery.min.css" type="text/javascript" charset="utf-8"></script>
+
+<!-- Disqus Comments -->
+
+
+</body>
+
+</html>

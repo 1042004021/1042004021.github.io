@@ -182,60 +182,14 @@ sql中为了保证事务的原子性，使用了undo-log，也就是回滚日志
 <ul>
 <li>读未提交指的是在一个事务中可以读取到其他事务还没有提交的数据，这样就会涉及到<code>脏读</code>，因为其他事务没有提交的数据可能会回滚，那么这个数据就不存在，也就是读到了脏数据</li>
 </ul>
-<table>
-<thead>
-<tr>
-<th>事务1开始</th>
-<th></th>
-</tr>
-</thead>
-<tbody><tr>
-<td>插入数据A</td>
-<td></td>
-</tr>
-<tr>
-<td>插入数据B</td>
-<td>事务2开始</td>
-</tr>
-<tr>
-<td></td>
-<td>查询数据，查询到了数据A，数据B</td>
-</tr>
-<tr>
-<td>回滚事务</td>
-<td>提交事务</td>
-</tr>
-</tbody></table>
+<p><img src="https://cdn.jsdelivr.net/gh/1042004021/cover/pic/image-20210815155539616.png" alt="image-20210815155539616"></p>
 <p>通过图表可以看到，在事务1中插入的数据回滚了，数据库中应该没有A，B数据，但是事务2中查询到了这两条数据，这就是脏读，使用读提交隔离级别可以解决脏读</p>
 </li>
 <li><p>读提交</p>
 <ul>
 <li>和名字一样，读取已经提交了事务的数据，但是这个隔离级别会造成<code>不可重复读</code>，不可重复读指的是一个事务两次查询数据间其他事务添加了或者修改了数据，这造成了一次事务中两查询的数据不同</li>
 </ul>
-<table>
-<thead>
-<tr>
-<th>事务1开始</th>
-<th>事务2开始</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>查询所有数据，得到数据A</td>
-<td>添加数据B</td>
-</tr>
-<tr>
-<td></td>
-<td>提交事务</td>
-</tr>
-<tr>
-<td>查询所有数据，得到数据A，B</td>
-<td></td>
-</tr>
-<tr>
-<td>提交事务</td>
-<td></td>
-</tr>
-</tbody></table>
+<p><img src="https://cdn.jsdelivr.net/gh/1042004021/cover/pic/image-20210815155605079.png" alt="image-20210815155605079"></p>
 <p>从图表可以看出在事务1开始后查询数据期间，事务2提交了添加数据的事务，事务1第二次查询数据得到的数据和第一次查询的数据不同，使用可重复读的隔离级别可以解决</p>
 </li>
 <li><p>可重复读</p>
@@ -312,6 +266,6 @@ sql中为了保证事务的原子性，使用了undo-log，也就是回滚日志
 <!-- Disqus Comments -->
 
 
-<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"jsonPath":"/live2dw/assets/shizuku.model.json"},"display":{"position":"right","width":300,"height":600},"mobile":{"show":false},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+</body>
 
 </html>
